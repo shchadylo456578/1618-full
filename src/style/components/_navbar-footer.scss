@@ -1,0 +1,32 @@
+@mixin navbar-footer() {
+  .navigation {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 2;
+  }
+
+  .navigation:before {
+    background-color: #fff;
+    content: "";
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 7% 5px 0;
+  }
+  .en-link {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #fff;
+  }
+  .en-link:before {
+    background-color: #fff;
+    content: "";
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 7% 2px 0;
+  }
+}

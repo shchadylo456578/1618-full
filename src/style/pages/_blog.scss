@@ -1,0 +1,142 @@
+.blog {
+  .blog-collections {
+    @include row-flex;
+    justify-content: space-between;
+    .blog-main {
+      padding-left: 8.33%;
+      @include col;
+      @include size(8);
+      @include size-xxs(7);
+      .portfolio-heder-text {
+        @include size(8);
+        @include size-lg(9);
+        @include size-md(10);
+        @include size-sm(12);
+        padding-bottom: 5%;
+        h1 {
+          @include header-text;
+        }
+        p {
+          @include p-text;
+          a {
+            text-decoration: underline;
+
+          }
+        }
+
+      }
+
+      .blog-item-photo {
+        position: relative;
+        .caption {
+          position: absolute;
+          top: 80%;
+          left: 30%;
+          transform: translate(-30%, -80%);
+          h3 {
+            @include size(7);
+            @include size-lg(8);
+            @include size-md(10);
+            @include size-sm(12);
+            @include photo-on-text;
+
+          }
+        }
+
+      }
+
+      .blog-link-items {
+        @include row-flex();
+        justify-content: space-between;
+        padding: 5% 0 15%;
+
+
+        .items {
+          @include col();
+          @include size(5.5);
+          @include size-sm(12);
+
+
+          .item {
+            @include title-h2;
+            @include border-bottom-text;
+
+            padding-top: 10%;
+            padding-bottom: 5%;
+
+          }
+
+        }
+      }
+    }
+
+
+
+    .navbar {
+      @include col();
+      @include size(3);
+      @include size-xs(4);
+      @include size-xxs(4.5);
+
+      #navbar {
+        @include navbar();
+        padding-bottom: 60%;
+      }
+
+      #pagination {
+        @include nav-next-prev;
+
+        .counter  {
+          display: block;
+          font-weight: bold;
+          margin-top: 10%;
+          margin-left: 9%;
+        }
+
+        .next-page, .prev-page {
+          position: relative;
+          padding-top: 10%;
+          display: block;
+          margin-left: 9%;
+        }
+        .next-page:before, .prev-page:before {
+          position: absolute;
+          left: -7.5%;
+          top: 50%;
+
+          background-color: #363636;
+          content: "";
+          border-radius: 80%;
+          width: 4px;
+          height: 4px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    .blog {
+      .blog-collections {
+        .blog-main {
+          .blog-item-photo {
+            h3 {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

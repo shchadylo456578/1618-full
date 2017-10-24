@@ -1,0 +1,161 @@
+.team-page {
+  //TODO: Header
+  .header {
+    @include row-flex;
+    justify-content: space-between;
+    .team-header {
+      padding-left: 8.33%;
+      @include col;
+      @include size(6);
+      @include size-md(7);
+      @include size-xs(8);
+      @include size-xxs(7);
+      padding-bottom: 2%;
+      h1 {
+        @include header-text;
+      }
+      p {
+        @include p-text;
+      }
+    }
+
+    //NAV
+
+    .navbar {
+      @include col();
+      @include size(3);
+      @include size-xs(4);
+      @include size-xxs(4.5);
+      #navbar {
+
+        @include navbar();
+      }
+    }
+  }
+
+  .team-photo {
+    @include row-flex();
+    .photo {
+      padding-left: 8.33%;
+      @include col();
+      @include size(11);
+    }
+  }
+
+
+  .team-main {
+    @include row-flex;
+
+
+    //TODO: Team-photo
+    .team-photo-items {
+      padding-left: 8.33%;
+      @include col;
+      @include size(8);
+      @include size-xs(7);
+
+
+      .items {
+        @include row-flex;
+        justify-content: space-between;
+
+        .item {
+          @include col;
+          @include size(5.5);
+          @include size-xs(12);
+          position: relative;
+          padding-top: 10%;
+          .text-about {
+            position: absolute;
+            bottom: 5%;
+            left: 15%;
+            transform: translate(-5%, -15%);
+
+            .text-prof {
+              @include photo-text-prof;
+            }
+            .text-name {
+             @include photo-on-text;
+            }
+          }
+        }
+      }
+    }
+
+    //TODO: Article
+    .team-text-inform {
+      @include col;
+      @include size(5);
+      @include size-xxlg(5);
+      @include size-lg(6);
+      @include size-sm(7);
+      @include size-xs(8);
+
+      padding-left: 8.33%;
+      padding-top: 10%;
+      .text-inform {
+        h1 {
+          @include header-text;
+
+        }
+        p {
+          @include p-text;
+
+        }
+      }
+    }
+
+    .team-article {
+      padding-left: 8.33%;
+      @include col;
+      @include size(8);
+      @include size-xs(7);
+
+      .items {
+        @include row-flex;
+        justify-content: space-between;
+        padding-bottom: 10%;
+        .item {
+          @include col;
+          @include size(5.5);
+          @include size-xs(12);
+          padding-top: 10%;
+          padding-bottom: 2%;
+          @include border-bottom-text;
+
+          h2 {
+            position: relative;
+            @include title-h2;
+
+            padding-bottom: 5%;
+          }
+          h2:before {
+
+            @include pseudo-dot-h2;
+
+          }
+          p {
+           @include p-text;
+          }
+        }
+
+        //TODO: Button
+        .team-button {
+          @include col;
+          @include size(5.5);
+          @include size-xs(12);
+
+
+
+          padding-top: 10%;
+          .button {
+            @include button();
+            display: inline-block;
+            padding: 5% 2% 4.5%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

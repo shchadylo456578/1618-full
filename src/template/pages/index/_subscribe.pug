@@ -1,0 +1,46 @@
+.wrapper
+  .logo-subscribe
+    .logo-part-1
+      img(src="images/svg/logo-part-1.svg", alt="logo")
+    .logo-animate
+    .logo-part-618
+      img(src="images/svg/logo-part-618.svg", alt="logo")
+  .subscribe
+    .subscribe-main
+      .subscribe-header-text
+        h1 Лист з новинами від 1.618
+        p Підпишіться на наш лист з новинами та отримуйте корисні поради, цінні ресурси, цікаві пропозиції, що розсилаються раз в декілька вівторків.
+
+      form#group-input
+        .group
+          input(type="text" required)
+          span.highlight
+          //span.bar
+          label Як вас звати?
+        .group
+          input(type="email" required)
+          span.highlight
+          //span.bar
+          label Ваша пошта
+
+        .checkbox
+          input#checkbox-1(type="checkbox", name="checkboxes")
+          label(for='checkbox-1') Нові статті в блозі (раз в два тижні)
+        .checkbox
+          input#checkbox-2(type="checkbox", name="checkboxes")
+          label(for='checkbox-2') Спеціальні пропозиції від ‘1.618’ (раз в місяць)
+
+
+
+      .subscribe-button
+        a.button(href="#") Підписатися
+
+    .navbar
+      #navbar
+        ul
+          li
+            a.navigation.selected(href="#") Закрити
+
+  .add-place
+
+

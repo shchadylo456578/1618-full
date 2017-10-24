@@ -1,0 +1,21 @@
+@mixin button() {
+  width: 100%;
+  border: 4px solid #363636;
+  background: transparent;
+  padding: 5% 0 4.5%;
+  color: #363636;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+    &:hover {
+    color: #fff;
+    background: #363636;
+    transition: ease 0.3s;
+  }
+  @media screen and (max-width: 480px) {
+    border: 2px solid #363636;
+  }
+}
+
+

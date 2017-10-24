@@ -1,0 +1,116 @@
+.portfolio {
+  .portfolio-collections {
+    @include row-flex();
+    justify-content: space-between;
+    .portfolio-main {
+      padding-left: 8.33%;
+      @include col;
+      @include size(8);
+      @include size-xxs(7);
+      .portfolio-heder-text {
+        @include size(8);
+        @include size-lg(9);
+        @include size-md(10);
+        @include size-sm(12);
+
+        h1 {
+          @include header-text;
+
+        }
+        p {
+          @include p-text;
+
+        }
+      }
+
+      .portfolio-items {
+
+        padding-bottom: 10%;
+        position: relative;
+
+        .item {
+
+          position: relative;
+          img {
+            padding-top: 5%;
+
+          }
+          .caption {
+            position: absolute;
+            top: 80%;
+            left: 30%;
+            transform: translate(-30%, -80%);
+            h3 {
+              @include photo-on-text;
+
+              @include size(7);
+              @include size-xxlg(8);
+              @include size-lg(8);
+              @include size-xs(12);
+            }
+          }
+        }
+      }
+    }
+
+    //TODO: PORTFOLIO-NAVBAR
+
+    .navbar {
+      @include col();
+      @include size(3);
+      @include size-xs(4);
+      @include size-xxs(4.5);
+      #navbar {
+        @include navbar();
+        padding-bottom: 60%;
+      }
+
+      #pagination {
+        @include nav-next-prev;
+
+        .counter {
+          display: block;
+          font-weight: bold;
+          margin-top: 10%;
+          margin-left: 9%;
+        }
+
+        .next-page, .prev-page {
+          position: relative;
+          padding-top: 10%;
+          display: block;
+          font-weight: 300;
+          margin-left: 9%;
+        }
+        .next-page:before, .prev-page:before {
+          position: absolute;
+          left: -9.5%;
+          top: 45%;
+          background-color: #363636;
+          content: "";
+          border-radius: 80%;
+          width: 4px;
+          height: 4px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .portfolio {
+    .portfolio-collections {
+      .portfolio-main {
+        .portfolio-items {
+          .item {
+            h3 {
+              font-size: 14px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

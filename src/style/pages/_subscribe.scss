@@ -1,0 +1,305 @@
+.logo-subscribe {
+  .logo-part-1 {
+    width: 40px;
+    left: 37px;
+    position: absolute;
+
+  }
+  .logo-animate {
+    position: absolute;
+    background: #363636;
+    top: 41px;
+    left: 55px;
+    width: 22px;
+    height: 100%;
+
+  }
+  .logo-part-618 {
+    position: absolute;
+    bottom: -105px;
+    left: 55px;
+    width: 22px;
+
+  }
+}
+
+.subscribe {
+  @include row-flex();
+  justify-content: space-between;
+
+  .subscribe-main {
+    @include col;
+    @include size(8);
+    @include shift-left(1);
+    @include shift-xxlg-left(1);
+
+    .subscribe-header-text {
+      @include size(8);
+      @include size-sm(12);
+      @include size-xs(12);
+
+      padding-bottom: 3%;
+
+      h1 {
+        @include header-text;
+
+
+      }
+      p {
+        @include p-text;
+      }
+    }
+
+    #group-input {
+      @include size(8);
+      @include size-sm(12);
+      @include size-xs(12);
+
+      .group {
+        position: relative;
+        padding: 5% 0 10%;
+
+        input {
+          font-size: 1.5rem;
+          padding: 10px 10px 10px 5px;
+          -webkit-appearance: none;
+          display: block;
+          color: #363636;
+          border: none;
+          width: 100%;
+          border-radius: 0;
+          border-bottom: 2px solid #363636;
+          &:focus {
+            outline: none;
+          }
+        }
+
+        /* Label */
+
+        label {
+          color: #363636;
+          font-size: 1.5rem;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 0;
+          top: 25%;
+          transition: all 0.2s ease;
+        }
+
+        /* active */
+
+        input {
+          &:focus ~ label, &.used ~ label {
+            top: -1%;
+            left: 0;
+            color: #9E9E9E;
+          }
+        }
+
+        /* Underline */
+
+        //.bar {
+        //  position: relative;
+        //  display: block;
+        //  width: 100%;
+        //  &:before, &:after {
+        //    content: '';
+        //    height: 2px;
+        //    width: 0;
+        //    bottom: 0;
+        //    position: absolute;
+        //    background: #363636;
+        //    transition: all 0.2s ease;
+        //  }
+        //  &:before {
+        //    left: 50%;
+        //  }
+        //  &:after {
+        //    right: 50%;
+        //  }
+        //}
+
+        /* active */
+
+        //input:focus ~ .bar {
+        //  &:before, &:after {
+        //    width: 50%;
+        //  }
+        //}
+
+        /* Highlight */
+
+        .highlight {
+          position: absolute;
+          height: 60%;
+          width: 100px;
+          top: 25%;
+          left: 0;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+
+        /* active */
+
+        input:focus ~ .highlight {
+          animation: inputHighlighter 0.3s ease;
+        }
+      }
+
+
+      //CHECKBOX
+      .checkbox {
+        padding-bottom: 15px;
+
+        label {
+          font-size: 1.1rem;
+        }
+        input[type="checkbox"] {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+        input[type="checkbox"] + label {
+          position: relative;
+          padding-left: 30px;
+          padding-top: 3px;
+          cursor: pointer;
+        }
+
+        input[type="checkbox"] + label:before,
+        input[type="checkbox"] + label:after {
+          content: ' ';
+          position: absolute;
+          box-sizing: border-box;
+        }
+
+        input[type="checkbox"] + label:before {
+          top: 0;
+          left: 0;
+          height: 21px;
+          width: 21px;
+          border: 2px solid #363636;
+        }
+
+        input[type="checkbox"] + label:after {
+          top: 0;
+          left: 0;
+          height: 21px;
+          width: 21px;
+        }
+
+        input[type="checkbox"]:checked + label:after {
+          background-color: #363636;
+        }
+      }
+    }
+
+    //#group-checkbox {
+    //  padding-top: 5%;
+    //  @include size(8);
+    //  @include size-xs(12);
+    //
+    //
+    //}
+
+    .subscribe-button {
+      @include size(5);
+      @include size-sm(8);
+      @include size-xs(12);
+      padding-top: 5%;
+      .button {
+        @include button();
+        text-align: center;
+        display: inline-block;
+        padding: 5%;
+
+      }
+    }
+  }
+  .navbar {
+    @include col;
+    @include size(3);
+    @include size-xs(3);
+    #navbar {
+      @include navbar();
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-subscribe {
+    .logo-part-1 {
+      width: 31px;
+      left: 17px;
+
+    }
+    .logo-animate {
+      top: 35px;
+      left: 31px;
+      width: 17px;
+
+    }
+    .logo-part-618 {
+      bottom: -85px;
+      left: 32px;
+      width: 17px;
+
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-subscribe {
+
+    .logo-part-1 {
+      width: 22px;
+      left: 11px;
+
+    }
+    .logo-animate {
+      top: 24px;
+      left: 21px;
+      width: 12px;
+
+    }
+    .logo-part-618 {
+      bottom: -60px;
+      left: 21px;
+      width: 12px;
+
+    }
+  }
+
+  .subscribe {
+    .subscribe-main {
+
+      #group-input {
+        .checkbox {
+          input[type="checkbox"] + label:before {
+
+            height: 12px;
+            width: 12px;
+            border: 1px solid #363636;
+          }
+
+          input[type="checkbox"] + label:after {
+            height: 12px;
+            width: 12px;
+          }
+        }
+
+      }
+      .subscribe-button {
+        .button {
+          border: 2px solid #363636;
+
+        }
+      }
+    }
+  }
+}
+
+
+
