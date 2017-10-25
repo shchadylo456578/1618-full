@@ -1,6 +1,8 @@
 .portfolio {
   .portfolio-collections {
-    @include row-flex();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     .portfolio-main {
       padding-left: 8.33%;

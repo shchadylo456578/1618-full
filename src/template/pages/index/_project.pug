@@ -240,19 +240,19 @@
 
 .block-background
   .wrapper
-      #project-slider
-        h2 Відгуки команди
-        .slider
-          .image-slide.active
-            img(src='images/main-page/photo-slider-1.jpg', alt='slide-1')
-            .caption
-              h3.slider-text Квартира з алюмінієвим плінтусом
-          .image-slide
-            img(src='images/main-page/photo-slider-2.jpg', alt='slide-2')
-            .caption
-              h3.slider-text Як закинутий цех перетворити на офіс
+    #slider-container
+      .slider
+        .image-slide
+          img(src='images/main-page/photo-slider-1.jpg', alt='#')
+          .caption
+            h3.slider-text Квартира з алюмінієвим плінтусом
+        //.image-slide.active
+        //  img(src='images/main-page/photo-slider-2.jpg', alt='#')
+        //  .caption
+        //    h3.slider-text Як закинутий цех перетворити на офіс
 
-        .slider-buttons
+      .slider-buttons
+        .buttons
           .prev-rel
             #prev Попередній
               br
@@ -261,5 +261,4 @@
             #next Наступний
               br
               | проект
-
 

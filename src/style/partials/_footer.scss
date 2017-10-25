@@ -6,15 +6,13 @@
 
 
   .footer-head {
-    @include row-flex;
     padding-bottom: 10%;
 
     .footer-collection {
-      @include col;
-      @include size(9);
-      @include size-lg(9);
-      @include size-xs(8);
       padding-left: 8.33%;
+      @include col;
+      @include size(8);
+      @include size-xxs(7);
       .footer-text {
         h1 {
          @include header-text;
@@ -24,7 +22,7 @@
 
       .footer-items-name {
         @include row-flex();
-
+        justify-content: space-between;
         padding-top: 7%;
 
         .footer-items {
@@ -56,15 +54,14 @@
 
 //TODO: Footer logo down
   .footer-logo-down {
-    @include row-flex();
     position: relative;
 
     .logoline-618 {
       position: relative;
-      @include col();
-      @include size(8);
-      @include size-lg(9);
-      //@include size-sm(10);
+      padding-left: 8.33%;
+      @include col;
+      @include size(9);
+      @include size-xxs(8);
 
       height: 22px;
       background-color: white;
@@ -86,12 +83,9 @@
 
 //TODO:footer links
   .footer-link-collections {
-    @include row-flex();
     .footer-links {
       @include col;
-      @include size(7);
-      @include size-lg(8);
-      @include size-sm(9);
+      @include size(9);
       padding: 5% 0 5% 8.33%;
 
       .links {
@@ -128,12 +122,6 @@
   }
 }
 
-
-@media screen and (max-width: 992px) {
-  .footer {
-
-  }
-}
 
 
 @media screen and (max-width: 768px) {

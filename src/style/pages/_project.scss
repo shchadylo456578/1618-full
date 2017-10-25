@@ -1,10 +1,9 @@
-.block-background {
-  @include background-block();
-}
 .project-blog {
 
     .main-block-size {
-      @include row-flex;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
       justify-content: space-between;
 
       .poroject-header-text {
@@ -113,6 +112,9 @@
 
         .project-photo {
           padding: 10% 0 0;
+          .item-img {
+            padding-top: 3%;
+          }
         }
 
         .project-photo-2 {
@@ -121,7 +123,7 @@
           padding: 10% 0 0;
           .item-img {
             @include col();
-            @include size(6);
+            @include size(5.9);
 
           }
 
@@ -133,10 +135,11 @@
           padding: 10% 0 10%;
 
           .item-img {
+            padding-bottom: 2%;
+
             @include col();
             @include size(3);
             @include size-xs(12);
-            padding-bottom: 2%;
 
           }
         }
@@ -195,6 +198,7 @@
 
                 .name {
                   @include title-h2;
+                  padding-bottom: 2%;
                 }
                 .profesion {
                   @include text-prof;
@@ -239,7 +243,6 @@
       }
     }
   .project-main-photo {
-    @include row-flex();
     .photo {
       padding-left: 8.33%;
       @include col();
@@ -247,89 +250,79 @@
       margin-bottom: 5%;
     }
   }
-  }
+}
 .block-background {
-  padding: 7% 0;
+  @include background-block();
+
   .wrapper {
-    #project-slider {
-      padding-left: 8.33%;
-      @include col();
-      @include size(11);
-
-      h2 {
-        position: relative;
-        @include title-h2
-      }
-
-      h2:before {
-        @include pseudo-dot-h2;
-        top: -6%;
-        left: -2%;
-      }
-
+    #slider-container {
+      padding: 5% 0;
       .slider {
-        padding-top: 5%;
-        padding-bottom: 60%;
-        position: relative;
+        padding-left: 8.33%;
+        @include col();
+        @include size(11);
+        padding-bottom: 2%;
 
         .image-slide {
-          position: absolute;
+          position: relative;
           opacity: 1;
           transition: all 1s ease;
+          height: 100%;
+          //img {
+          //  position: absolute;
+          //}
           .caption {
             position: absolute;
-            top: 80%;
-            left: 20%;
-            transform: translate(-20%, -80%);
+            top: 84%;
+            left: 7.5%;
+            transform: translate(7.5%, -84%);
             .slider-text {
-              @include size(7);
-              @include size-xs(12);
+              @include size(9);
+              @include size-lg(8);
               @include photo-on-text;
             }
           }
-
         }
-        .active {
-          opacity: 0;
-        }
+        //.active {
+        //  opacity: 0;
+        //
+        //}
       }
-
       .slider-buttons {
-        @include row-flex();
-        justify-content: space-between;
+        padding-left: 8.33%;
+        @include col;
+        @include size(11);
 
-        .prev-rel, .prev-rel-1 {
-          @include col();
-          @include size(3);
-          @include size-xxlg(3);
-          @include size-xlg(3);
-          @include size-lg(3);
-          @include size-md(4);
-          @include size-sm(4);
-          @include size-xs(5);
-          @include size-xxs(5);
-          position: relative;
-        }
+        .buttons {
+          @include row-flex();
+          justify-content: space-between;
+          .prev-rel, .prev-rel-1 {
+            @include col();
+            @include size(2.6);
+            @include size-md(3);
+            @include size-xs(5);
+            position: relative;
+          }
 
-        #prev, #next {
-          @include slider-botton-text;
-          padding-left: 15%;
-          cursor: pointer;
+          #prev, #next {
+            @include slider-botton-text;
+            padding-left: 15%;
+            cursor: pointer;
 
 
-        }
+          }
 
-        #prev:before, #next:before {
-          background-color: #363636;
-          content: "";
-          border-radius: 50%;
-          width: 4px;
-          height: 4px;
-          display: inline-block;
-          position: absolute;
-          left: 10px;
-          top: 10px;
-
+          #prev:before, #next:before {
+            background-color: #363636;
+            content: "";
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 15%;
+          }
         }
       }
     }

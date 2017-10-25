@@ -1,7 +1,9 @@
 .team-page {
   //TODO: Header
   .header {
-    @include row-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     .team-header {
       padding-left: 8.33%;
@@ -34,7 +36,6 @@
   }
 
   .team-photo {
-    @include row-flex();
     .photo {
       padding-left: 8.33%;
       @include col();
@@ -44,9 +45,6 @@
 
 
   .team-main {
-    @include row-flex;
-
-
     //TODO: Team-photo
     .team-photo-items {
       padding-left: 8.33%;

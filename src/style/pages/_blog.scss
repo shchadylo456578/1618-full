@@ -1,6 +1,8 @@
 .blog {
   .blog-collections {
-    @include row-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     .blog-main {
       padding-left: 8.33%;
@@ -42,7 +44,6 @@
 
           }
         }
-
       }
 
       .blog-link-items {
@@ -52,7 +53,7 @@
 
 
         .items {
-          @include col();
+          @include col;
           @include size(5.5);
           @include size-sm(12);
 
