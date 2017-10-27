@@ -16,9 +16,9 @@
 
         .blog-item-photo
           a(href="index-article.html")
-            img(src="images/blog-page/blog-photo-1.jpg", alt="blog-photo")
-            .caption
-              h3 Переваги та недоліки життя в квартирі та заміському будинку
+            .item(data-content="Переваги та недоліки життя в квартирі та заміському будинку")
+              img(src="images/blog-page/blog-photo-1.jpg", alt="blog-photo")
+
 
         .blog-link-items
           .items
@@ -34,9 +34,9 @@
 
         .blog-item-photo
           a(href="#")
-            img(src="images/blog-page/blog-photo-2.jpg", alt="blog-photo")
-            .caption
-              h3 Секрети вдалої кухні/ванної/гардеробу/…
+            .item(data-content="Секрети вдалої кухні/ванної/гардеробу/…")
+              img(src="images/blog-page/blog-photo-2.jpg", alt="blog-photo")
+
 
         .blog-link-items
           .items
@@ -52,11 +52,9 @@
 
 
       .navbar
+        #navbartitle.navigation.title Меню
         #navbar
           ul
-            li
-              a.navigation.selected(href="#") Меню
-
             li
               a.navigation(href="index.html") Головна
             li
@@ -64,7 +62,7 @@
             li
               a.navigation(href="index-portfolio.html") Портфоліо
             li
-              a.navigation(href="index-blog.html") Блог
+              a.navigation.nav-blog(href="index-blog.html") Блог
             li
               a.en-link(href="index-en.html") English version
 

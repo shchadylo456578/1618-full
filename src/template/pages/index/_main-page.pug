@@ -12,13 +12,11 @@
         p Раціональні, прості та практичні проекти квартир, будинків, офісів, громадських закладів та інших споруд, а також їх комплексне втілення.
 
       .navbar
-        div#navbartitle.navigation.title Меню
+        #navbartitle.navigation.title Меню
         #navbar
           ul
-            //- li
-              //- a.navigation.selected(href="#") Меню
             li
-              a.navigation(href="index.html") Головна
+              a.navigation.nav-main(href="index.html") Головна
             li
               a.navigation(href="index-team.html") Команда
             li
@@ -32,10 +30,10 @@
     //TODO: SLIDER
     #slider-container
       .slider
-        .image-slide
+        .image-slide(data-content="Квартира з алюмінієвим плінтусом")
           img(src='images/main-page/photo-slider-1.jpg', alt='#')
-          .caption
-            h3.slider-text Квартира з алюмінієвим плінтусом
+          //.caption
+          //  h3.slider-text Квартира з алюмінієвим плінтусом
         //.image-slide.active
         //  img(src='images/main-page/photo-slider-2.jpg', alt='#')
         //  .caption
@@ -73,6 +71,8 @@
           .column
             h2 05 Підтримка
             p Гарантійне обслуговування. Внесення змін та доповнень у проекти, професійні консультації та супровід будівництва.
+
+
 
 
 

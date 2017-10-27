@@ -24,12 +24,14 @@
     }
 
     .navbar {
+      @include navbar();
+      position:fixed;
+      right: 0;
       @include col();
-      @include size(3);
+      @include size(2.5);
       @include size-xs(4);
       @include size-xxs(4.5);
       #navbar {
-        @include navbar();
         padding-bottom: 60%;
       }
       #back {

@@ -29,21 +29,66 @@
       }
 
       .blog-item-photo {
-        position: relative;
-        .caption {
-          position: absolute;
-          top: 80%;
-          left: 30%;
-          transform: translate(-30%, -80%);
-          h3 {
-            @include size(7);
-            @include size-lg(8);
-            @include size-md(10);
-            @include size-sm(12);
-            @include photo-on-text;
-
-          }
+        .item {
+          position: relative;
+          cursor: pointer;
         }
+        //.caption {
+        //  position: absolute;
+        //  top: 80%;
+        //  left: 30%;
+        //  transform: translate(-30%, -80%);
+        //  h3 {
+        //    @include size(7);
+        //    @include size-lg(8);
+        //    @include size-md(10);
+        //    @include size-sm(12);
+        //    @include photo-on-text;
+        //
+        //  }
+        //}
+        .item img  {
+          width:100%;
+          vertical-align:top;
+        }
+
+
+        .item:after {
+          position:absolute;
+          opacity:0;
+          transition: all 0.3s;
+          -webkit-transition: all 0.3s;
+        }
+        .item:after {
+          content:'';
+          width:100%;
+          height:100%;
+          top:0;
+          left:0;
+          background:rgba(0,0,0,0.4);
+        }
+        .item:before {
+          @include photo-on-text;
+          @include size(6.5);
+          @include size-xs(11);
+          @include size-xxs(12);
+          position:absolute;
+
+
+          content: attr(data-content);
+          color:#fff;
+          z-index:1;
+          bottom:0;
+          padding:0 0 7% 10%;
+          box-sizing:border-box;
+          -moz-box-sizing:border-box;
+          opacity:1;
+        }
+        .item:hover:after, .image-slide:hover:before {
+          opacity:1;
+
+        }
+
       }
 
       .blog-link-items {
@@ -74,14 +119,34 @@
 
 
     .navbar {
+      @include navbar();
+      position:fixed;
+      right: 0;
       @include col();
-      @include size(3);
+      @include size(2.5);
+
       @include size-xs(4);
       @include size-xxs(4.5);
 
       #navbar {
-        @include navbar();
         padding-bottom: 60%;
+        .nav-blog {
+          font-weight: bold;
+
+        }
+        .nav-blog:before {
+          background-color: #363636;
+          content: "";
+          border-radius: 50%;
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+          margin: 0 7% 2% 0;
+        }
+        .nav-blog:hover:before {
+          background-color: #9E9E9E;
+          transition: all 0.3s ease;
+        }
       }
 
       #pagination {
@@ -132,7 +197,7 @@
       .blog-collections {
         .blog-main {
           .blog-item-photo {
-            h3 {
+            .item:before {
               font-size: 14px;
             }
           }

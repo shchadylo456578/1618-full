@@ -3,12 +3,31 @@ $text-color: #363636;
 @mixin navbar() {
   position: relative;
   z-index: 100;
+  #navbartitle{
+    cursor: pointer;
+  }
+
+  #navbar {
+    display: none;
+
+  }
   .navigation {
     font-size: 25px;
     color: $text-color;
     font-weight: 300;
-    line-height: 45px;
+    line-height: 60px;
+    &:hover {
+      color: #9E9E9E;
+      transition: all 0.3s ease;
+
+
+    }
   }
+  //.navigation.changeColorText{
+  //  font-weight: bold;
+  //  color: #363636;
+  //}
+
 
   .navigation:before {
     background-color: #363636;
@@ -19,13 +38,22 @@ $text-color: #363636;
     display: inline-block;
     margin: 0 7% 2% 0;
   }
+  .navigation:hover:before {
+    background-color: #9E9E9E;
+    transition: all 0.3s ease;
+
+
+  }
   .en-link {
     font-size: 19px;
     line-height: 45px;
-
-
     color: #9E9E9E;
+    &:hover {
+      color: #363636;
+      transition: all 0.3s ease;
+    }
   }
+
   .en-link:before {
     background-color: #9E9E9E;
     content: "";
@@ -35,6 +63,12 @@ $text-color: #363636;
     display: inline-block;
     margin: 0 7% 2px 0;
   }
+
+  .en-link:hover:before {
+    background: #363636;
+    transition: all 0.3s ease;
+  }
+
   @media screen and (max-width: 1280px) {
     .navigation {
       font-size: 21px;

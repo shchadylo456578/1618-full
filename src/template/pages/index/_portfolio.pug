@@ -10,41 +10,35 @@
           h1 Портфоліо 1.618
           p Тут ми викладаємо наші роботи, від концептів до уже реалізованих об’єктів. Тут ви знайдете архітектурні проекти котеджів, як візуалізації так і реальні фото інтер’єрів квартир та офісів, а також усі інші творіння команди 1.618.
         .portfolio-items
-          .item
-            a(href="index-project.html")
+          a(href="index-project.html")
+            .item(data-content="Як закинутий цех перетворити на офіс")
               img(src="images/main-page/photo-slider-2.jpg", alt="photo-portfolio")
-              .caption
-                h3 Як закинутий цех перетворити на офіс
-          .item
-            a(href="#")
+
+          a(href="#")
+            .item(data-content="Квартира з алюмінієвим плінтусом")
               img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
-              .caption
-                h3 Квартира з алюмінієвим плінтусом
-          .item
-            a(href="#")
+
+          a(href="#")
+            .item(data-content="Квартира з алюмінієвим плінтусом")
               img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
-              .caption
-                h3 Квартира з алюмінієвим плінтусом
-          .item
-            a(href="#")
+
+          a(href="#")
+            .item(data-content="Квартира з алюмінієвим плінтусом")
               img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
-              .caption
-                h3 Квартира з алюмінієвим плінтусом
+
 
 
 
       .navbar
+        #navbartitle.navigation.title Меню
         #navbar
           ul
-            li
-              a.navigation.selected(href="#") Меню
-
             li
               a.navigation(href="index.html") Головна
             li
               a.navigation(href="index-team.html") Команда
             li
-              a.navigation(href="index-portfolio.html") Портфоліо
+              a.navigation.nav-portfolio(href="index-portfolio.html") Портфоліо
             li
               a.navigation(href="index-blog.html") Блог
             li

@@ -1,6 +1,7 @@
 .team-page {
   //TODO: Header
   .header {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -8,7 +9,8 @@
     .team-header {
       padding-left: 8.33%;
       @include col;
-      @include size(6);
+      @include size(4.6);
+      @include size-xxlg(6);
       @include size-md(7);
       @include size-xs(8);
       @include size-xxs(7);
@@ -17,6 +19,7 @@
         @include header-text;
       }
       p {
+        //@include size(4.1);
         @include p-text;
       }
     }
@@ -24,13 +27,32 @@
     //NAV
 
     .navbar {
+      @include navbar();
+      position:fixed;
+      right: 0;
       @include col();
-      @include size(3);
+      @include size(2.5);
       @include size-xs(4);
       @include size-xxs(4.5);
       #navbar {
+        .nav-team {
+          font-weight: bold;
 
-        @include navbar();
+        }
+        .nav-team:before {
+          background-color: #363636;
+          content: "";
+          border-radius: 50%;
+          width: 8px;
+          height: 8px;
+          display: inline-block;
+          margin: 0 7% 2% 0;
+        }
+        .nav-team:hover:before {
+          background-color: #9E9E9E;
+          transition: all 0.3s ease;
+        }
+
       }
     }
   }
