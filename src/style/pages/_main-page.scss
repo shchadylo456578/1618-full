@@ -52,7 +52,7 @@
     .header-text {
       // padding-left: 8.33%;
       @include col;
-      @include size(6);
+      @include size(6.5);
       @include size-md(7);
       @include size-xs(8);
       @include size-xxs(7);

@@ -57,6 +57,16 @@
     $('#navbartitle').click(function(e){
         $('#navbar').show(500);
         $('#navbartitle').hide(500);
+
+        var dotsOpacity = $('#dotsAnimate').css("opacity");
+
+        console.log(dotsOpacity);
+
+        if(dotsOpacity < 1) {
+          $('#dotsAnimate').css({opacity: 1})
+        }
+
+
     });
 
     /**
