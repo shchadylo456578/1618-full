@@ -1,24 +1,15 @@
 $(document).ready(function(){
 
-  function freshDot(){
+  function freshDot(container){
     this.obj = document.createElement("div");
     this.obj.classList.add("box");
-    var container = $('#dotsAnimate');
+    // var container = $('#dotsAnimate');
 
     this.obj.style.top = (container.height() * Math.random()) + 'px';
     this.obj.style.left = (container.width() * Math.random()) + 'px';
 
     container.append(this.obj);
   }
-
-  var dot = [];
-
-  for(var i = 0 ; i < 9 ; i++ ){
-    dot.push(new freshDot());
-  }
-
-
-
 
   var controller = new ScrollMagic.Controller();
 
@@ -29,7 +20,9 @@ $(document).ready(function(){
   // header-text
   
   var arrowStartHeight = ($('.header-text').height() - 40) +'px';
-  var arrowEndHeight = $(window).height()+'px';
+  var arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
+  var arrowBlackEnd = $('.footer').position().top+'px';
+
   // var arrowEndHeight = $(window).height()+'px';
   
   // $('#logo .logo-animate').height(arrowStartHeight);
@@ -43,8 +36,7 @@ $(document).ready(function(){
     // triggerElement:'#logo',
     triggerHook:0,
     offset:'20%',
-
-    // duration:'100%'
+    // duration:arrowBlackEnd
   })
   .setTween(arrow)
   .setPin('#logo',{pushFollowers:false})
@@ -57,6 +49,13 @@ $(document).ready(function(){
   ;
   // 130px
   // logofooter
+
+  // var logofooter = new TimelineMax;
+  // logofooter
+    // .from('.logo-animate', 1, {backgroundColor:'white'})
+    // .to('.logo-animate', 1, {backgroundColor:'white'},0)
+    // ;
+  // backgroundColor:"#FF0000", ease:Power2.easeOut}
   var logofooterScene = new ScrollMagic.Scene({
     triggerElement:'.footer',
     // triggerHook:130,
@@ -64,7 +63,7 @@ $(document).ready(function(){
 
     duration:'20%'
   })
-  // .setTween(arrow)
+  // .setTween(logofooter)
   .setPin('#logofooter',{pushFollowers:false})
   // .setClassToggle('#logo','fixed')
   .addTo(controller) 
@@ -101,6 +100,43 @@ $(document).ready(function(){
     console.log(event.scrollDirection);
   });
 
+      /*
+     *
+     *  Menu button
+     *
+     *
+     */
+
+    $('#navbartitle').click(function(e){
+      $('#navbar').show(500);
+      $('#navbartitle').hide(500);
+
+      var dotsOpacity = $('#dotsAnimate').css("opacity");
+
+      console.log(dotsOpacity);
+
+      if(dotsOpacity < 1) {
+        $('#dotsAnimate').css({opacity: 1})
+      }
+
+
+  });
+
+  /**
+   *
+   *
+   *
+   * chenge color menu* */
+  $('.navigation').click(function () {
+    if ($(this).hasClass('changeColorText')) {
+      $(this).removeClass('changeColorText');
+    } else {
+      $('.navigation').removeClass('changeColorText');
+      $(this).addClass('changeColorText');
+  
+    }
+  });
+
   // .on('update', e => {
     // /
   // });
@@ -122,14 +158,29 @@ $(document).ready(function(){
 
   window.addEventListener("resize", function(){
   
-      menu_bottom_line_show = $('.footer').position().top - $(window).height();
-      //  - $(window).height()/4;
-      navbartitle.duration(menu_bottom_line_show);
-      
-      console.log('dur',navbartitle.duration());
-  
-    });
+      init();
 
+  });
+
+  init();
+
+
+  function init(){
+    menu_bottom_line_show = $('.footer').position().top - $(window).height();
+    //  - $(window).height()/4;
+    navbartitle.duration(menu_bottom_line_show);
+    
+    console.log('dur!!',navbartitle.duration());
+
+    var dot = [];
+
+    var container = $('#dotsAnimate');
+    container.text('');
+
+    for(var i = 0 ; i < 9 ; i++ ){
+      dot.push(new freshDot(container));
+    }
+  }
 
 
 

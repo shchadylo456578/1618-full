@@ -1,4 +1,5 @@
 .main-page {
+  background-color: #FFF;
   .header {
     position: relative;
     display: flex;
@@ -83,8 +84,8 @@
       @include size(2.5);
       @include size-xs(4);
       @include size-xxs(4.5);
-      #navbartitle{
-      }
+      // #navbartitle{
+      // }
       #navbar {
         display: none;
         transition: 0.3s;
@@ -322,8 +323,16 @@
 //    }
 //  }
 //}
-//@media screen and (max-width: 480px) {
-//  .wrapper {
+@media screen and (max-width: 480px) {
+  // .main-page .header .logo .logo-part-1 {
+    // left:auto;
+    // right: 1px;
+  // }
+  // .main-page .header .logo .logo-animate {
+    // left:auto;
+    // right: 1px;
+  // }
+  //  .wrapper {
 //    .main-article-collections {
 //      .main-article {
 //        .columns {
@@ -336,7 +345,7 @@
 //      }
 //    }
 //  }
-//}
+}
 //@media screen and (max-width: 320px) {
 //  .wrapper {
 //    .main-article-collections {
