@@ -1,44 +1,57 @@
 .main-page {
+  background-color: #FFF;
   .header {
     position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     padding-bottom: calc(100% - 50%);
-    //.logo {
-    //  @include col;
-    //  @include size(1);
-    //  .logo-part-1 {
-    //    width: 40px;
-    //    left: 37px;
-    //    position: absolute;
-    //
-    //  }
-    //  .logo-animate {
-    //    position: absolute;
-    //    background: #363636;
-    //    top: 41px;
-    //    left: 55px;
-    //    width: 22px;
-    //    height: 100%;
-    //
-    //  }
-    //
-    //  .logo-animate:before {
-    //    background: url(../images/svg/logo-part-618.svg) no-repeat;
-    //    content: "";
-    //    background-size: 24px 50px;
-    //    position: absolute;
-    //    background-position: 0 0;
-    //    border: none;
-    //    height: 50px;
-    //    padding-right: 30px;
-    //    top: 105%;
-    //    left: 0;
-    //  }
-    //}
+    // .scrollmagic-pin-spacer{
+      // min-height:auto;
+      // min-height: calc(100% - 40px);
+      // transition: min-height 1s ease-in;
+      
+      .logo {
+        // opacity:0;
+        position: relative;
+        width: 40px;
+        // height: 100%;
+        // transition: min-height 1s ease-in;
+      @include col;
+      @include size(1);
+      .logo-part-1 {
+        width: 40px;
+        height:47px;
+        left: 0;
+        position: absolute;
+      
+      }
+      .logo-animate {
+        position: absolute;
+        background: #363636;
+        top: 40px;
+        left: 18px;
+        width: 22px;
+        height: calc(100% - 40px);
+      
+      }
+      
+      .logo-animate:before {
+        background: url(../images/svg/logo-part-618.svg) no-repeat;
+        content: "";
+        background-size: 24px 50px;
+        position: absolute;
+        background-position: 0 0;
+        border: none;
+        height: 57px;
+        padding-right: 30px;
+        top: 105%;
+        left: 0;
+      }
+      // }
+    }
     .header-text {
-      padding-left: 8.33%;
+      // padding-left: 8.33%;
       @include col;
       @include size(6.5);
       @include size-md(7);
@@ -57,14 +70,22 @@
     .navbar {
       @include navbar();
 
+      opacity: 1;
+      transition: all 1s ease-out;
+
       position:fixed;
       right: 0;
+
+      &.fade-out{
+        opacity: 0;
+      }
+
       @include col();
       @include size(2.5);
       @include size-xs(4);
       @include size-xxs(4.5);
-      #navbartitle{
-      }
+      // #navbartitle{
+      // }
       #navbar {
         display: none;
         transition: 0.3s;
@@ -302,8 +323,16 @@
 //    }
 //  }
 //}
-//@media screen and (max-width: 480px) {
-//  .wrapper {
+@media screen and (max-width: 480px) {
+  // .main-page .header .logo .logo-part-1 {
+    // left:auto;
+    // right: 1px;
+  // }
+  // .main-page .header .logo .logo-animate {
+    // left:auto;
+    // right: 1px;
+  // }
+  //  .wrapper {
 //    .main-article-collections {
 //      .main-article {
 //        .columns {
@@ -316,7 +345,7 @@
 //      }
 //    }
 //  }
-//}
+}
 //@media screen and (max-width: 320px) {
 //  .wrapper {
 //    .main-article-collections {
