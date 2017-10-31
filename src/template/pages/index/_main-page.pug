@@ -14,23 +14,21 @@
       .navbar
         #navbartitle.navigation.title Меню
         #navbar
-          ul
-            li
-              a.navigation.nav-main(href="index.html") Головна
-            li
-              a.navigation(href="index-slider.html") Команда
-            li
-              a.navigation(href="index-portfolio.html") Портфоліо
-            li
-              a.navigation(href="index-blog.html") Блог
-            li
-              a.en-link(href="#") English version
+          a.navigation.nav-main(href="index.html") Головна
+
+          a.navigation(href="index-team.html") Команда
+
+          a.navigation(href="index-portfolio.html") Портфоліо
+
+          a.navigation(href="index-blog.html") Блог
+
+          a.en-link(href="#") English version
 
 
     //TODO: SLIDER
     #slider-container
       .slider
-        .image-slide(data-content="Квартира з алюмінієвим плінтусом")
+        .image-slide.active(data-content="Квартира з алюмінієвим плінтусом")
           img(src='images/main-page/photo-slider-1.jpg', alt='#')
 
         .image-slide(data-content="Як закинутий цех перетворити на офіс")

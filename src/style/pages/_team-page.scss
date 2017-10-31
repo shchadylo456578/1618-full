@@ -28,13 +28,22 @@
 
     .navbar {
       @include navbar();
+      opacity: 1;
+      transition: all 1s ease-out;
       position:fixed;
       right: 0;
       @include col();
-      @include size(2.5);
+      @include size(2.35);
       @include size-xs(4);
       @include size-xxs(4.5);
+      &.fade-out{
+        opacity: 0;
+      }
       #navbar {
+        .navigation {
+          @include navbar();
+
+        }
         .nav-team {
           font-weight: bold;
 

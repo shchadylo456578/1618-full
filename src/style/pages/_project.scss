@@ -11,6 +11,7 @@
         padding-left: 8.33%;
         @include col;
         @include size(6);
+        @include size-xxlg(6.5);
         @include size-md(7);
         @include size-xs(8);
         @include size-xxs(7);
@@ -25,13 +26,20 @@
 
       .navbar {
         @include navbar();
+        opacity: 1;
+        transition: all 1s ease-out;
         position:fixed;
         right: 0;
         @include col();
-        @include size(2.5);
+        @include size(2.35);
         @include size-xs(4);
         @include size-xxs(4.5);
-
+        &.fade-out{
+          opacity: 0;
+        }
+        .navigation {
+          @include navbar();
+        }
         #navbar {
           padding-bottom: 60%;
         }

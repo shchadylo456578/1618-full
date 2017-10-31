@@ -23,37 +23,48 @@
       }
     }
 
-    .navbar {
-      @include navbar();
-      position:fixed;
-      right: 0;
-      @include col();
-      @include size(2.5);
-      @include size-xs(4);
-      @include size-xxs(4.5);
-      #navbar {
-        padding-bottom: 60%;
-      }
-      #back {
-        @include nav-next-prev;
-        .back {
-          position: relative;
-          display: block;
-          font-weight: 300;
-          margin-left: 7%;
+      .navbar {
+        @include navbar();
+
+        opacity: 1;
+        transition: all 1s ease-out;
+        position:fixed;
+        right: 0;
+        @include col();
+        @include size(2.35);
+        @include size-xs(4);
+        @include size-xxs(4.5);
+        &.fade-out{
+          opacity: 0;
+        }
+        .navigation {
+          @include navbar();
 
         }
-        .back:before {
-          position: absolute;
-          top: 40%;
-          left: -7.5%;
-          background-color: #363636;
-          content: "";
-          border-radius: 80%;
-          width: 4px;
-          height: 4px;
-          display: inline-block;
 
+        #navbar {
+          padding-bottom: 60%;
+        #back {
+          @include nav-next-prev;
+          .back {
+            position: relative;
+            display: block;
+            font-weight: 300;
+            margin-left: 7%;
+
+          }
+          .back:before {
+            position: absolute;
+            top: 40%;
+            left: -7.5%;
+            background-color: #363636;
+            content: "";
+            border-radius: 80%;
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+
+          }
         }
       }
     }
