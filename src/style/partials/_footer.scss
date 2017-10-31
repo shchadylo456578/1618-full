@@ -20,7 +20,7 @@
         height: 38px;
         left: 0;
         position: absolute;
-      
+
       }
       .logo-animate {
         position: absolute;
@@ -29,9 +29,9 @@
         left: 18px;
         width: 22px;
         height: calc(100% - 40px);
-      
+
       }
-      
+
       // .logo-animate:before {
       //   background: url(../images/svg/logo-white.png) no-repeat;
       //   content: "";
@@ -46,7 +46,7 @@
       // }
     }
     .footer-collection {
-      padding-top: 10%;      
+      padding-top: 10%;
       padding-left: 8.33%;
       @include col;
       @include size(8);
@@ -66,6 +66,7 @@
         .footer-items {
           @include col;
           @include size(5.5);
+          @include size-sm(5);
           @include size-xs(12);
           .item {
             padding-bottom: 10%;

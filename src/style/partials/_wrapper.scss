@@ -1,8 +1,8 @@
 .wrapper {
   position: relative;
   // background-color:#fff;
-  z-index: 1; 
-  @include wrapper-full();
+  z-index: 1;
+  @include wrapper();
   @include reset();
   @include shift-left(2);
   @include shift-lg-left(1);
@@ -10,34 +10,34 @@
   @include shift-xs-left(-0.2);
   height: auto;
 
-  // .logo {
-  //   .logo-part-1 {
-  //     width: 40px;
-  //     left: 37px;
-  //     position: absolute;
-  //   }
-  //   .logo-animate {
-  //     position: absolute;
-  //     background: #363636;
-  //     top: 41px;
-  //     left: 55px;
-  //     width: 22px;
-  //     // height: 10%;
-  //   }
+   .logo {
+     .logo-part-1 {
+       width: 41px;
+       left: 0;
+       position: absolute;
+     }
+     .logo-animate {
+       position: absolute;
+       background: #363636;
+       top: 41px;
+       left: 55px;
+       width: 22px;
+       // height: 10%;
+     }
 
-  //   .logo-animate:before {
-  //     background: url(../images/svg/logo-part-618.svg) no-repeat;
-  //     content: "";
-  //     background-size: 24px 50px;
-  //     position: absolute;
-  //     background-position: 0 0;
-  //     border: none;
-  //     height: 50px;
-  //     padding-right: 30px;
-  //     top: 105%;
-  //     left: 0;
-  //   }
-  // }
+     .logo-animate:before {
+       background: url(../images/svg/logo-part-618.svg) no-repeat;
+       content: "";
+       background-size: 24px 50px;
+       position: absolute;
+       background-position: 0 0;
+       border: none;
+       height: 50px;
+       padding-right: 30px;
+       top: 105%;
+       left: 0;
+     }
+   }
 }
 
 @media screen and (max-width: 768px) {

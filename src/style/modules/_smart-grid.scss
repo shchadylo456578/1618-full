@@ -600,13 +600,14 @@ $fields: 15px;
         max-width: 100%;
         height: auto;
     }
+
 }
 
 @mixin debug($background, $outline){
     height: 100vh;
     position: fixed;
     width: 100%;
-    //z-index: 1000;
+    z-index: 1000;
 
     > div{
         height: inherit;

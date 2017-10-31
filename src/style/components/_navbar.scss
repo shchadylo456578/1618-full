@@ -29,14 +29,19 @@ $text-color: #363636;
   //}
 
 
+
+
+
+
+
   .navigation:before {
     background-color: #363636;
     content: "";
     border-radius: 50%;
     width: 4px;
     height: 4px;
-    display: inline-block;
-    margin: 0 7% 2% 0;
+    position: absolute;
+    left: -7%;
   }
   .navigation:hover:before {
     background-color: #9E9E9E;
