@@ -6,7 +6,7 @@ $(document).ready(function(){
     stagePadding: '50',
     touchDrag  : false,
     mouseDrag  : false,
-    smartSpeed:1000,
+    // smartSpeed:1000,
     animateOut: 'bringOut',
     animateIn: 'bringIn',
     loop:false,
