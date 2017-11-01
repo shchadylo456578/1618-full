@@ -1,6 +1,4 @@
 
-
-
 $(document).ready(function(){
   var owl = $('.owl-carousel');
 
@@ -25,13 +23,8 @@ $(document).ready(function(){
         1000:{
             items:1
         }
-    },
-    // onInitialize: createAnimations,
-    ///onDragged:callback
-    // onTranslate:createAnimations,
-
+    }
   });
-
 
   owl.on('change.owl.carousel', function(event) {
 
@@ -41,17 +34,17 @@ $(document).ready(function(){
     if(event.item.index < event.property.value){
       $itemToShow.addClass('animated owl-animated-in fadeNext');
     }
-    
+
     if(event.item.index > event.property.value){
       $currentItem.addClass('animated owl-animated-in fadePrev');
       $($itemToShow).css({left:'0'});
     }
-    
-    
+
+
   });
-  
+
   owl.on('translated.owl.carousel', function(event) {
-    
+
     $('.owl-item').removeClass('animated fadePrev fadeNext bringOut bringIn owl-animated-out owl-animated-in');
     $('.owl-item.active').css({left:'0'});
   });

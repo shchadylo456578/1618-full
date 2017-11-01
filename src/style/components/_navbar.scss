@@ -11,6 +11,9 @@ $text-color: #363636;
     display: none;
 
   }
+  a {
+    display: block;
+  }
   .navigation {
     font-size: 25px;
     color: $text-color;
@@ -41,7 +44,8 @@ $text-color: #363636;
     width: 4px;
     height: 4px;
     position: absolute;
-    left: -7%;
+    left: -13%;
+    top: 44%;
   }
   .navigation:hover:before {
     background-color: #9E9E9E;
@@ -50,6 +54,7 @@ $text-color: #363636;
 
   }
   .en-link {
+    position: relative;
     font-size: 19px;
     line-height: 45px;
     color: #9E9E9E;
@@ -65,8 +70,10 @@ $text-color: #363636;
     border-radius: 50%;
     width: 4px;
     height: 4px;
+    position: absolute;
     display: inline-block;
-    margin: 0 7% 2px 0;
+    left: -13%;
+    top: 44%;
   }
 
   .en-link:hover:before {
