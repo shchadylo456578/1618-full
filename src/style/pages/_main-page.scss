@@ -99,26 +99,203 @@
   }
 
   #slider-container {
-    margin-bottom: 10%;
-    overflow: hidden;
-    position: relative;
-    @include size(12.5);
+    //margin-bottom: 10%;
+    //overflow: hidden;
+    //position: relative;
+    //@include size(12.5);
 
-    .slider {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
 
-      padding-left: 8.33%;
-      @include col();
-      width: 178%;
-      padding-bottom: 2%;
-      .image-slide {
-        margin-right: 1.5%;
-        @include size(6);
-        position: relative;
-        cursor: pointer;
+
+
+    //.content{
+    //  -webkit-transform: translate3d(0, calc(+100% - 16px), 0);
+    //  transform: translate3d(0, calc(+100% - 16px), 0);
+    //  top:30%;
+    //  width:80%;
+    //  bottom: 0;}
+    //
+    ///*
+    //*
+    //* opened
+    //*
+    //*
+    //*/
+    //
+    //content.opened {
+    //  -webkit-transform: translate3d(0, 0, 0);
+    //  transform: translate3d(0, 0, 0);
+    //}
+
+    .owl-carousel{
+
+      .animated  {
+        -webkit-animation-duration : 10000 ms  ;
+        animation-duration : 10000 ms  ;
+        -webkit-animation-fill-mode : both  ;
+        animation-fill-mode : both  ;
       }
+      /* .owl-animated-out - only for current item */
+      /* This is very important class. Use z-index if you want move Out item above In item */
+      .owl-animated-out {
+        z-index : 0;
+        // transform: scale(1) translateX(1%);
+      }
+      /* .owl-animated-in - only for upcoming item
+      /* This is very important class. Use z-index if you want move In item above Out item */
+      .owl-animated-in {
+        z-index : 1;
+        // transform: scale(1.2);
+        // transform: scale(1.1);
+
+      }
+      /* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */
+      .fadeIn  {
+        -webkit-animation-name : fadeIn  ;
+        animation-name : fadeIn  ;
+      }
+
+      .fadeOut  {
+        // opacity: 0;
+        -webkit-animation-name : fadeOut  ;
+        animation-name : fadeOut  ;
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity : 1;
+          -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          transform: scale(1) translateX(100%);
+        }
+        20% {
+          opacity : 1;
+          -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1.1) translateX(101%);
+        }
+        60% {
+          opacity : 1;
+          -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1.01) translateX(2%);
+        }
+        90%{
+          -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1) translateX(1%)
+        }
+        100% {
+          opacity : 1   ;
+          -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          transform: scale(1) translateX(10px);
+        }
+      }
+
+      @keyframes  fadeIn  {
+        0% {
+          opacity : 1;
+          // -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          transform: scale(1) translateX(100%);
+        }
+        20% {
+          opacity : 1;
+          // -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1.1) translateX(101%);
+        }
+        60% {
+          opacity : 1;
+          // -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1.01) translateX(2%);
+        }
+        90%{
+          // -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+          transform: scale(1) translateX(1%)
+        }
+        100% {
+          opacity : 1   ;
+          // -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          transform: scale(1) translateX(10px);
+        }
+      }
+      @-webkit-keyframes fadeOut {
+
+        0% {
+          opacity : 1;
+          // transform: scale(1) translateX(0);
+        }
+        20% {
+          opacity : 1;
+          // transform: scale(0.9) translateX(10px);
+        }
+        60% {
+          // opacity : 1;
+          // transform: scale(1.01) translateX(2%);
+        }
+        90%{
+          // transform: scale(1) translateX(1%)
+        }
+        100% {
+          opacity : 1   ;
+          -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          // transform: scale(0.9) translateX(10px);
+        }
+      }
+      @keyframes  fadeOut  {
+
+        0% {
+          opacity : 1;
+          // transform: scale(1) translateX(0);
+        }
+        20% {
+          opacity : 1;
+          // transform: scale(0.9) translateX(10px);
+        }
+        60% {
+          // opacity : 1;
+          // transform: scale(1.01) translateX(2%);
+        }
+        90%{
+          // transform: scale(1) translateX(1%)
+        }
+        100% {
+          opacity : 1   ;
+          // -webkit-box-shadow:none;
+          -moz-box-shadow:none;
+          box-shadow: none;
+          // transform: scale(0.9) translateX(10px);
+        }
+      }
+      .owl-item{
+        transform: translateX(10px);
+      }
+      .owl-stage{
+        // transition: all 1s ease-in;
+      }
+
+      .owl-stage-outer{
+        // overflow:visible;
+        padding: 50px 0;
+>>>>>>> fcb62e529911f3285230ae299fd70bd1c00a76f0
+      }
+
       .image-slide img  {
         width:100%;
         vertical-align:top;
