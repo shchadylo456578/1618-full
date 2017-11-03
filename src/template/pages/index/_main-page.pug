@@ -5,18 +5,13 @@
         .logo-part-1(style="position:relative")
           <svg id="logoblack" width="41px" height="38px" viewBox="0 0 41 38">
             <path id="oneblack" width="41" height="38" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
-            //- <path id="onewhite" x="0" y="12" width="41" height="38" fill="#FFFFFF" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
           </svg>
-          //- .logo-animate
-        .logo-part-2
-          <svg style="position:absolute;" id="logowhite" width="41px" height="38px" viewBox="0 0 41 38">
-            <path id="onewhite" width="41" height="38" fill="#FFFFFF" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
-            //- <path id="oneblack" x="0" y="0" width="41" height="38" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
-          </svg>
+        //- .logo-part-2
+        //-   <svg style="position:absolute;" id="logowhite" width="41px" height="38px" viewBox="0 0 41 38">
+        //-     <path id="onewhite" width="41" height="38" fill="#FFFFFF" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
+        //-   </svg>
         <svg id="svgrecid" width="41px" height="100%">
-          //- <path id="oneblack" width="41" height="38" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
           <rect id="svgrec" x="18" y="0" width="22px" height="100%"/>
-          //- <path id="onewhite" x="0" y="12" width="41" height="38" fill="#FFFFFF" d="M20.060551,-3.960511 C22.0605514,12.8127137 13.4071517,23.9931784 8.35227274e-05,23.9931784 L8.35227274e-05,38.0016748 L18.0569815,38.0016748 L18.0569815,38 L40.0567728,38 L40.0567728,0.0394894533 L22.0605514,0.0394894533 Z"></path>
         </svg>
       .header-text
         h1#changeWords Ви мрієте
@@ -40,26 +35,21 @@
 
     //TODO: SLIDER
     #slider-container
-      .owl-carousel.owl-theme
-        .item.image-slide(data-content="Квартира з алюмінієвим плінтусом")
-          img(src='images/blog-page/blog-photo-2.jpg', alt='#')
-        .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-          img(src='images/main-page/photo-slider-2.jpg', alt='#')
-        .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-          img(src='images/main-page/photo-slider-3.jpg', alt='#')
-        .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-          img(src='images/main-page/photo-slider-2.jpg', alt='#')
-
-      //- .slider-buttons
-      //-   .buttons
-      //-     .owlPrevBtn
-      //-       #prev Попередній
-      //-         br
-      //-         |проект
-      //-     .owlNextBtn
-      //-       #next Наступний
-      //-         br
-      //-         |проект
+      .carusel
+        .owl-carousel.owl-theme
+          .item.image-slide(data-content="Квартира з алюмінієвим плінтусом")
+            img.owl-lazy(data-src='images/blog-page/blog-photo-2.jpg', alt='Lazy Owl Image')
+          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
+            img.owl-lazy(data-src='images/main-page/photo-slider-2.jpg', alt='Lazy Owl Image')
+          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
+            img.owl-lazy(data-src='images/main-page/photo-slider-3.jpg', alt='Lazy Owl Image')
+          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
+            img.owl-lazy(data-src='images/main-page/photo-slider-2.jpg', alt='Lazy Owl Image')
+        .owl-nav
+          .owl-prev
+            #left
+          .owl-next
+            #right
 
       //TODO: ARTICLE
 

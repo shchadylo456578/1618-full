@@ -7,7 +7,6 @@ let gulp = require('gulp'),
   emitty = require('emitty').setup('template', 'pug'),
   browserSync = require('browser-sync'),
   reload = browserSync.reload;
-
 // production mode (see build task)
 const isProduction = false;
 
@@ -81,9 +80,9 @@ let build = {
 // Supported options
 // ---------------
 let supported = [
-  'last 2 versions',
+  'last 4 versions',
   'safari >= 8',
-  'ie >= 10',
+  'ie >= 9',
   'ff >= 20',
   'ios 6',
   'android 4'
@@ -111,6 +110,7 @@ gulp.task('styles:app', () => {
     .pipe($.if(isProduction, $.cssnano({
       autoprefixer: {browsers: supported, add: true}
     })))
+    .pipe($.groupCssMediaQueries())
     .pipe($.if(useSourceMaps, $.sourcemaps.write()))
     .pipe(gulp.dest(build.styles))
     .pipe(reload({

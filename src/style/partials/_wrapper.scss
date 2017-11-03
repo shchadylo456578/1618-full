@@ -1,8 +1,7 @@
 .wrapper {
   position: relative;
-  // background-color:#fff;
-  z-index: 1;
-  @include wrapper();
+  //z-index: 1;
+  @include wrapper-full();
   @include reset();
   @include shift-left(2);
   @include shift-lg-left(1);
