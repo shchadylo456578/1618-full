@@ -1,86 +1,73 @@
 $(document).ready(function(){
 
-  function freshDot(container){
-    this.obj = document.createElement("div");
-    this.obj.classList.add("box");
-    // var container = $('#dotsAnimate');
-
-    this.obj.style.top = (container.height() * Math.random()) + 'px';
-    this.obj.style.left = (container.width() * Math.random()) + 'px';
-
-    container.append(this.obj);
-  }
-
-  var controller = new ScrollMagic.Controller();
-
-
-  var arrow = new TimelineMax;
-  // pageYOffset
-
-  // header-text
-  
-  var arrowStartHeight = ($('.header-text').height() - 40) +'px';
+  var arrowStartHeight = ($('.header-text').height() - 38) +'px';
   var arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
   var arrowBlackEnd = $('.footer').position().top+'px';
+  // var blacklineFooter = $('#logo').position().top / $(window).height();
 
-  // var arrowEndHeight = $(window).height()+'px';
+  var triggerHookLogoBlack = $('#logo').position().top / $(window).height();
   
-  // $('#logo .logo-animate').height(arrowStartHeight);
+  var menu_bottom_line_show = $('.footer').position().top - $(window).height();
+  
+  var controller = new ScrollMagic.Controller();
+  
+  
+  // var blacklineFooter = new TimelineMax;
+  //     blacklineFooter
+  //       .from('#svgrecid', 0, {height:arrowEndHeight,ease:Power0.easeNone})
+  //       .to('#svgrecid', 1, {height:0,ease:Power0.easeNone},0)
+  //       ;
 
-  arrow
-    .from('.logo-animate', 0, {height:arrowStartHeight})
-    .to('.logo-animate', 1, {height:arrowEndHeight},0)
-    ;
+  //   var logoLineScene = new ScrollMagic.Scene({
+  //     triggerElement:'.footer',
+  //     triggerHook:1,
+  //     offset:'-38',
+  //     duration:arrowEndHeight
+  //   })
+  //   .setTween(blacklineFooter)
+  //   // .setPin('#svgrecid',{pushFollowers:false})
+  //   .addTo(controller) 
+  //   .addIndicators({name: "logoLineScene", colorTrigger: "green"});
+
+  var blackline = new TimelineMax;
+      blackline
+        .from('#svgrecid', 0, {height:arrowStartHeight})
+        .to('#svgrecid', 1, {height:arrowEndHeight},0)
+        ;
 
   var logoPinScene = new ScrollMagic.Scene({
-    // triggerElement:'#logo',
     triggerHook:0,
     offset:'20%',
     // duration:arrowBlackEnd
   })
-  .setTween(arrow)
-  .setPin('#logo',{pushFollowers:false})
-  // .setClassToggle('#logo','fixed')
+  .setTween(blackline)
+  // .setPin('#logo',{pushFollowers:false})
   .addTo(controller) 
-  .addIndicators()  
-  // .on('update',function(event){
-  //   console.log(event);
-  // })
-  ;
-  // 130px
-  // logofooter
+  .addIndicators();
 
-  // var logofooter = new TimelineMax;
-  // logofooter
-    // .from('.logo-animate', 1, {backgroundColor:'white'})
-    // .to('.logo-animate', 1, {backgroundColor:'white'},0)
-    // ;
-  // backgroundColor:"#FF0000", ease:Power2.easeOut}
+  var logofooter = new TimelineMax;
+  
+  logofooter
+    .to('.logo-part-1', 1, { y: '-38', ease:Power0.easeNone})
+    .to('#logoblack', 1, { y: '38', ease:Power0.easeNone},0)
+    .to('.logo-part-2', 1, { y: '-38', ease:Power0.easeNone},0)
+    .to('#logowhite', 1, {y: '0', ease:Power0.easeNone},0)
+    ;
+
   var logofooterScene = new ScrollMagic.Scene({
     triggerElement:'.footer',
-    // triggerHook:130,
-    offset:'172',
-
-    duration:'20%'
+    triggerHook:triggerHookLogoBlack,
+    offset:'-38',
+    duration:'38'
   })
-  // .setTween(logofooter)
-  .setPin('#logofooter',{pushFollowers:false})
-  // .setClassToggle('#logo','fixed')
+  .setTween(logofooter)
+  // .setPin('#logofooter',{pushFollowers:false})
   .addTo(controller) 
   .addIndicators()  
-  // .on('update',function(event){
-  //   console.log(event);
-  // })
   ;
 
-
-  var menu_bottom_line_show = $('.footer').position().top - $(window).height();
-  //  - $(window).height()/4;
   var navbartitle = new ScrollMagic.Scene({
     triggerHook:0,
-    // triggerElement:'.header',
-    // triggerPosition:0,
-    // reverse:false,
     offset:'20%',
     duration:menu_bottom_line_show
   })
@@ -96,9 +83,19 @@ $(document).ready(function(){
     }else if(!$('.navbar').hasClass('fade-out') && event.scrollDirection == 'FORWARD'){
       $('.navbar').toggleClass('fade-out');
     }
-
-    console.log(event.scrollDirection);
   });
+
+
+  function freshDot(container){
+    this.obj = document.createElement("div");
+    this.obj.classList.add("box");
+
+    this.obj.style.top = (container.height() * Math.random()) + 'px';
+    this.obj.style.left = (container.width() * Math.random()) + 'px';
+
+    container.append(this.obj);
+  }
+
 
       /*
      *
@@ -137,59 +134,88 @@ $(document).ready(function(){
     }
   });
 
-  // .on('update', e => {
-    // /
-  // });
-
-  // $(window).scroll(function(event){
-    // console.log(controller.info("scrollDirection"))
-  // });
-
-  // controller.on('update',function(){
-    // console.log('aaa');
-  // })
-
-
-  // "change update progress
-  // start end enter leave", callback);
- // enter, start, progress - scrolling down
- // progress, start, leave - scrolling up
-
-
   window.addEventListener("resize", function(){
-  
-      init();
-
+      reinit();
   });
 
-  init();
+  $(window).scroll(function(event){
+    //
+    //     var st = $(this).scrollTop();
+    triggerHookLogoBlack = $('#logo').position().top / $(window).height();
+    logofooterScene.triggerHook(triggerHookLogoBlack);
 
-
-  function init(){
-    menu_bottom_line_show = $('.footer').position().top - $(window).height();
-    //  - $(window).height()/4;
-    navbartitle.duration(menu_bottom_line_show);
+  });
+  
+  function reinit(){
     
-    console.log('dur!!',navbartitle.duration());
 
+    // initAnimations();
+    /*
+    *
+    *  Menu 
+    * 
+    */
+
+    // var arrowStartHeight = ($('.header-text').height() - 38) +'px';
+    // var arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
+    // var arrowBlackEnd = $('.footer').position().top+'px';
+    // var triggerHookLogoBlack = $('#logo').position().top / $(window).height();
+    // var menu_bottom_line_show = $('.footer').position().top - $(window).height();
+  
+    
+    arrowStartHeight = ($('.header-text').height() - 38) +'px';
+    arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
+    arrowBlackEnd = $('.footer').position().top+'px';
+    triggerHookLogoBlack = $('#logo').position().top / $(window).height();
+    
+    menu_bottom_line_show = $('.footer').position().top - $(window).height();    
+    
+    navbartitle.duration(menu_bottom_line_show);
+    // triggerHookLogoBlack = $('#logo').position().top / $(window).height();
+
+    /*
+     *
+     *  Set where Arrow to pin
+     * 
+     * 
+     */ 
+
+    logoPinScene.setPin('#logo',{pushFollowers:false})
+    logoPinScene.update();
+    
+    /*
+     *  Footer color Logog color change
+     * 
+     */ 
+
+    
+    // logoLineScene
+    
+    logofooterScene.triggerHook(triggerHookLogoBlack);  
+    // controller.updateScene(logoPinScene, true);
+    
+    
+    /*
+    *
+    * DOTS
+    * 
+    */
     var dot = [];
-
+    
     var container = $('#dotsAnimate');
     container.text('');
-
+    
     for(var i = 0 ; i < 9 ; i++ ){
       dot.push(new freshDot(container));
     }
+
+    // cb();
+
   }
+  
+
+  reinit();
 
 
 
-
-  /*
-  $(window).resize(function(){
-    for(i=0;i<200;i++){
-      document.body.removeChild(dot[i]);
-    }
-  });
-  */
 });
