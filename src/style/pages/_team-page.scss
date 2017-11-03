@@ -1,6 +1,7 @@
 .team-page {
   //TODO: Header
   .header {
+    display: -webkit-flex;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -93,7 +94,7 @@
           @include size(5.5);
           @include size-xs(12);
           position: relative;
-          padding-top: 10%;
+          margin-top: 29px;
           .text-about {
             position: absolute;
             bottom: 5%;
