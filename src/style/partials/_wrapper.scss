@@ -1,89 +1,154 @@
 .wrapper {
   position: relative;
-  //z-index: 1;
-  @include wrapper-full();
+  @include wrapper();
   @include reset();
-  @include shift-left(2);
-  @include shift-lg-left(1);
-  @include shift-md-left(0.5);
-  @include shift-xs-left(-0.2);
+  //@include shift-left(2);
+  //@include shift-lg-left(1);
+  //@include shift-md-left(0.5);
+  //@include shift-xs-left(-0.2);
   height: auto;
 
-   .logo {
-     .logo-part-1 {
-       width: 41px;
-       left: 0;
-       position: absolute;
-     }
-     .logo-animate {
-       position: absolute;
-       background: #363636;
-       top: 41px;
-       left: 55px;
-       width: 22px;
-       // height: 10%;
-     }
+  .logo-an {
+    .logo-pos {
+      .logo-part-1 {
+        position: absolute;
+        width: 41px;
+        left: 37px;
 
-     .logo-animate:before {
-       background: url(../images/svg/logo-part-618.svg) no-repeat;
-       content: "";
-       background-size: 24px 50px;
-       position: absolute;
-       background-position: 0 0;
-       border: none;
-       height: 50px;
-       padding-right: 30px;
-       top: 105%;
-       left: 0;
-     }
-   }
+
+      }
+      .logo-animate {
+        position: absolute;
+        background: #363636;
+        top: 33px;
+        left: 55px;
+        width: 22px;
+        height: 245px;
+
+      }
+
+      .logo-animate:before {
+        background: url(../images/svg/logo-part-618.svg) no-repeat;
+        content: "";
+        background-size: 24px 50px;
+        position: absolute;
+        background-position: 0 0;
+        border: none;
+        height: 50px;
+        padding-right: 30px;
+        top: 105%;
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          left: 37px;
+          width: 40px;
+        }
+        .logo-animate {
+          top: 33px;
+          left: 55px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          position: absolute;
+          left: 37px;
+          width: 40px;
+        }
+        .logo-animate {
+          top: 33px;
+          left: 56px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          position: absolute;
+          left: 36px;
+          width: 41px;
+        }
+        .logo-animate {
+          top: 33px;
+          left: 56px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    // .logo {
-    //   .logo-part-1 {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          width: 30px;
+          left: 17px;
+        }
+        .logo-animate {
+          top: 25px;
+          left: 31px;
+          width: 16px;
 
-    //     width: 31px;
-    //     left: 17px;
+        }
+        .logo-animate:before {
+          background-size: 16px 42px;
+          height: 40px;
 
-    //   }
-    //   .logo-animate {
-    //     top: 35px;
-    //     left: 31px;
-    //     width: 17px;
-
-    //   }
-    //   .logo-animate:before {
-    //     background-size: 13px 42px;
-    //     height: 40px;
-
-    //   }
-    // }
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
   .wrapper {
-    // .logo {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          width: 16px;
+          left: 9.5px;
 
-    //   .logo-part-1 {
-    //     width: 18px;
-    //     left: 13px;
+        }
+        .logo-animate {
+          top: 10px;
+          left: 17px;
+          width: 9px;
 
-    //   }
-    //   .logo-animate {
-    //     top: 20px;
-    //     left: 21px;
-    //     width: 10px;
+        }
+        .logo-animate:before {
+          background-size: 9px 23px;
+          top: 102%;
+          height: 40px;
 
-    //   }
-    //   .logo-animate:before {
-    //     background-size: 11px 22px;
-    //     top: 102%;
-    //     height: 40px;
-
-    //   }
-    // }
+        }
+      }
+    }
   }
+
 }
+

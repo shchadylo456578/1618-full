@@ -1,71 +1,46 @@
 .main-page {
+  position: relative;
   .header {
-    @include row-flex;
+    @include shift-padding-left(0.9);
+    @include row-float;
     position: relative;
-    padding-bottom: calc(100% - 50%);
-    .logo {
-      position: relative;
-      width: 40px;
-      @include col;
-      @include size(1);
-
-      .logo-part-1 {
-        //width: 40px;
-        //height:47px;
-        //left: 0;
-        //position: absolute;
-      }
-
-      .logo-animate {
-        position: absolute;
-        background: #363636;
-        top: 40px;
-        left: 18px;
-        width: 22px;
-        height: calc(100% - 40px);
-
-      }
-
-      .logo-animate:before {
-        background: url(../images/svg/logo-part-618.svg) no-repeat;
-        content: "";
-        background-size: 24px 50px;
-        position: absolute;
-        background-position: 0 0;
-        border: none;
-        height: 57px;
-        padding-right: 30px;
-        top: 105%;
-        left: 0;
-      }
-    }
+    padding-bottom: 50%;
     .header-text {
-      @include col;
-      @include size(6.5);
-      @include size-md(7);
 
-      h1 {
-        @include header-text();
+
+      @include col-float;
+      @include size(9);
+      @include size-xs(8);
+      @include size-xxs(7.5);
+
+      .text {
+        @include size(7);
+        @include size-xs(11.5);
+
+        h1 {
+          @include header-text();
+        }
+        p {
+          font-size: 21px;
+          line-height: 35px;
+          @include p-text;
+        }
       }
-      p {
-        font-size: 21px;
-        line-height: 35px;
-        @include p-text;
-      }
+
     }
 
     .navbar {
-      @include col();
-      @include size(2.3);
-      @include size-xs(3);
+      @include col-float;
+      @include size(3);
+      @include size-xs(4);
       @include size-xxs(4.5);
 
 
       @include navbar();
       opacity: 1;
       transition: all 1s ease-out;
-      position: fixed;
-      right: 0;
+      //position: fixed;
+      //right: 0;
 
       &.fade-out {
         opacity: 0;
@@ -77,8 +52,8 @@
       }
       .nav-main {
         font-weight: bold;
-
       }
+
       .nav-main:before {
         background-color: #363636;
         content: "";
@@ -87,6 +62,10 @@
         height: 8px;
         display: inline-block;
         margin: 0 7% 2% 0;
+        @include to($max_width: 480px) {
+          width: 6px;
+          height: 6px;
+        }
       }
       .nav-main:hover:before {
         background-color: #9E9E9E;
@@ -96,7 +75,7 @@
   }
 
   #slider-container {
-    padding-left: 8.33%;
+    @include shift-padding-left(1);
     margin-bottom: 15%;
 
 
@@ -364,23 +343,21 @@
   }
 
   .main-article-collections {
+    @include shift-padding-left(0.9);
+
     .article-title {
-      @include col;
       @include size(4);
       @include size-xlg(5);
       @include size-lg(5);
       @include size-md(6);
-      @include size-xs(7);
       @include header-text();
       margin-bottom: 0;
-      padding-left: 8.33%;
     }
 
     .main-article {
-      padding-left: 8.33%;
       @include col;
-      @include size(8.2);
-      @include size-xxs(7.8);
+      @include size(7.8);
+      @include size-xs(6.8);
       padding-bottom: 10%;
 
       .columns {
@@ -392,6 +369,9 @@
         }
         .column:nth-child(even) {
           float: right;
+          @include to($max_width: 480px) {
+            float: left;
+          }
         }
         .column:last-child {
           float: none;

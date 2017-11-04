@@ -42,9 +42,9 @@
 
 // smartgrid('style/modules', settings);
 
-
+//
 // var smartgrid = require('smart-grid');
-
+//
 // /* It's principal settings in smart grid project */
 // var settings = {
 //   outputStyle: 'scss', /* less || scss || sass || styl */
@@ -79,12 +79,12 @@
 //     xs: {
 //       width: '480px',
 //       offset: '10px'
-
+//
 //     },
 //     xxs: {
 //       width: '320px',
 //       offset: '10px'
-
+//
 //     }
 //   }
 // };

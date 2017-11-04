@@ -1,58 +1,50 @@
 .footer {
   position: relative;
   background-color: #363636;
-  overflow: hidden;
-
-  .footer-head {
-    padding-bottom: 10%;
-    .logofoooter {
-      transform:translateY(-38px);
-      position: relative;
-      @include col;
-      @include size(1);
-
+  //overflow: hidden;
+  .logofoooter {
+    //transform:translateY(-41px);
+    //position: relative;
+    .logo-footer-pos {
       .logo-part-2 {
-        width: 40px;
-        height: 38px;
-        left: 0;
         position: absolute;
+        width: 41px;
+        left: 37px;
 
       }
       .logo-animate {
         position: absolute;
-        background: #FFF;
-        top: 38px;
-        left: 18px;
-        width: 22px;
-        height: calc(100% - 40px);
+        background: #fff;
+        top: 33px;
+        left: 55px;
+        width: 23px;
+        height: 77.2%;
 
       }
     }
-    .footer-collection {
-      padding-top: 17%;
-      padding-left: 8.33%;
-      @include col;
-      @include size(8);
-      @include size-xxs(7.7);
+  }
+
+  .footer-head {
+
+    padding: 15% 0 5%;
+    .footer-items-collection {
+      @include shift-padding-left(0.9);
       .footer-text {
+        @include size-xs(7);
         h1 {
-         @include header-text;
+          @include header-text;
           color: #fff;
         }
       }
 
-      .footer-items-name {
-        @include row-flex();
-        justify-content: space-between;
-        padding-top: 7%;
-
-        .footer-items {
-          @include col;
-          @include size(5.5);
-          @include size-sm(5);
+      .footer-item-columns {
+        @include row-float;
+        .items {
+          @include col-float;
+          @include size(4.4);
           @include size-xs(12);
           .item {
-            padding-bottom: 10%;
+            padding-bottom: 8%;
             h2 {
               @include title-h2;
               padding-bottom: 3%;
@@ -61,7 +53,6 @@
             a {
               @include p-text;
               color: #fff;
-
             }
             .map {
               text-decoration: underline;
@@ -72,15 +63,18 @@
     }
   }
 
-
-
-//TODO: Footer logo down
+  //TODO: Footer logo down
   .footer-logo-down {
     position: relative;
+    @include shift-padding-left(0.1);
+    @include shift-xlg-padding-left(0.2);
+    @include shift-lg-padding-left(0.25);
+    @include shift-sm-padding-left(0.2);
+    @include shift-xs-padding-left(0);
 
     .logoline-618 {
       position: relative;
-      padding-left: 8.33%;
+      //padding-left: 8.33%;
       @include col;
       @include size(9);
       @include size-xxs(8);
@@ -102,8 +96,7 @@
 
   }
 
-
-//TODO:footer links
+  //TODO:footer links
   .footer-link-collections {
     .footer-links {
       @include col;
@@ -114,7 +107,6 @@
         @include row-flex;
         justify-content: space-between;
 
-
         .link {
           position: relative;
           @include col();
@@ -124,8 +116,6 @@
           @include p-text;
           color: #fff;
         }
-
-
 
         .link:before {
           position: absolute;
@@ -144,49 +134,151 @@
   }
 }
 
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    .logofoooter {
+      .logo-footer-pos {
+        .logo-part-2 {
+          left: 37px;
+          width: 40px;
+
+        }
+        .logo-animate {
+
+          top: 33px;
+          left: 55px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .wrapper {
+    .logofoooter {
+
+      .logo-footer-pos {
+        .logo-part-2 {
+          position: absolute;
+          left: 37px;
+          width: 40px;
+
+        }
+        .logo-animate {
+
+          top: 33px;
+          left: 56px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    .logofoooter {
+
+      .logo-footer-pos {
+        .logo-part-2 {
+          position: absolute;
+          left: 36px;
+          width: 41px;
+
+        }
+        .logo-animate {
+
+          top: 33px;
+          left: 56px;
+          width: 21px;
+
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 768px) {
   .footer {
-    .footer-head {
-      padding-bottom: 67%;
-    }
-    .footer-logo-down {
-      .logoline-618 {
-        height: 16px;
+    .wrapper {
+      .logofoooter {
+
+        .logo-footer-pos {
+          .logo-part-2 {
+            width: 30px;
+            left: 17px;
+
+          }
+          .logo-animate {
+            top: 25px;
+            left: 31px;
+            width: 16px;
+
+          }
+        }
       }
-      .logoline-618:before {
-        background-size: 40px 32px;
-        height: 16px;
+      .footer-head {
+        padding-bottom: 67%;
+      }
+      .footer-logo-down {
+        .logoline-618 {
+          height: 16px;
+        }
+        .logoline-618:before {
+          background-size: 40px 32px;
+          height: 16px;
+
+        }
 
       }
-
     }
-
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer {
-    .footer-head {
-      padding-bottom: 10%;
-    }
-    .footer-logo-down {
-      .logoline-618 {
-        height: 10px;
+    .wrapper {
+
+      .logofoooter {
+
+        .logo-footer-pos {
+          .logo-part-2 {
+            width: 16px;
+            left: 9.5px;
+
+          }
+          .logo-animate {
+            top: 10px;
+            left: 17px;
+            width: 9px;
+          }
+        }
       }
-      .logoline-618:before {
-        background-size: 26px 26px;
-        height: 10px;
+
+      .footer-head {
+        padding-bottom: 10%;
+      }
+      .footer-logo-down {
+        .logoline-618 {
+          height: 10px;
+        }
+        .logoline-618:before {
+          background-size: 26px 26px;
+          height: 10px;
+
+        }
 
       }
-
-    }
-    .footer-link-collections {
-      .footer-links {
-        .links {
-          .link:before {
-            width: 4px;
-            height: 4px;
+      .footer-link-collections {
+        .footer-links {
+          .links {
+            .link:before {
+              width: 4px;
+              height: 4px;
+            }
           }
         }
       }
@@ -194,4 +286,53 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          width: 30px;
+          left: 17px;
+        }
+        .logo-animate {
+          top: 25px;
+          left: 31px;
+          width: 16px;
 
+        }
+        .logo-animate:before {
+          background-size: 16px 42px;
+          height: 40px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          width: 16px;
+          left: 9.5px;
+
+        }
+        .logo-animate {
+          top: 10px;
+          left: 17px;
+          width: 9px;
+
+        }
+        .logo-animate:before {
+          background-size: 9px 23px;
+          top: 102%;
+          height: 40px;
+
+        }
+      }
+    }
+  }
+
+}

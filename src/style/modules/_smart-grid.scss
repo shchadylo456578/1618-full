@@ -127,7 +127,7 @@ $fields: 15px;
 }
 
 @mixin row-float(){
-    //@include row-offsets();
+    @include row-offsets();
     @include clearfix();
 }
 
@@ -143,6 +143,8 @@ $fields: 15px;
 
 @mixin col-float(){
     float: left;
+    box-sizing: border-box;
+    @include col-offsets(margin);
 }
 
 @mixin col-ib(){

@@ -14,9 +14,8 @@
       @include size-md(7);
       @include size-xs(8);
       @include size-xxs(7);
-      a {
+      h1 {
         @include header-text;
-        display: inline-block;
       }
       p {
         @include p-text;

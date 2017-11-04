@@ -26,16 +26,6 @@ $text-color: #363636;
 
     }
   }
-  //.navigation.changeColorText{
-  //  font-weight: bold;
-  //  color: #363636;
-  //}
-
-
-
-
-
-
 
   .navigation:before {
     background-color: #363636;
@@ -44,7 +34,7 @@ $text-color: #363636;
     width: 4px;
     height: 4px;
     position: absolute;
-    left: -13%;
+    left: -10%;
     top: 44%;
   }
   .navigation:hover:before {
