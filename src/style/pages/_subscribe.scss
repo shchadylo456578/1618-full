@@ -1,25 +1,33 @@
 .logo-subscribe {
-  .logo-part-1 {
-    width: 40px;
-    left: 37px;
+  .logo-pos {
     position: absolute;
-
-  }
-  .logo-animate {
-    position: absolute;
-    background: #363636;
-    top: 41px;
-    left: 55px;
-    width: 22px;
+    left: 2.5%;
     height: 100%;
+    @include to($max_width: 1280px) {
+      left: .8%;
+    }
+    .logo-part-1 {
+      width: 40px;
+      left: 37px;
+      position: absolute;
 
-  }
-  .logo-part-618 {
-    position: absolute;
-    bottom: -105px;
-    left: 55px;
-    width: 22px;
+    }
+    .logo-animate {
+      position: absolute;
+      background: #363636;
+      top: 35px;
+      left: 55px;
+      width: 22px;
+      height: 100%;
 
+    }
+    .logo-part-618 {
+      position: absolute;
+      bottom: -105px;
+      left: 55px;
+      width: 22px;
+
+    }
   }
 }
 
@@ -32,9 +40,7 @@
   .subscribe-main {
     @include col;
     @include size(8);
-    @include shift-left(1);
-    @include shift-xxlg-left(1);
-
+    @include shift-padding-left(0.9);
     .subscribe-header-text {
       @include size(8);
       @include size-sm(12);
@@ -232,46 +238,52 @@
 
 @media screen and (max-width: 768px) {
   .logo-subscribe {
-    .logo-part-1 {
-      width: 31px;
-      left: 17px;
+      .logo-pos {
+        .logo-part-1 {
+          width: 31px;
+          left: 17px;
 
-    }
-    .logo-animate {
-      top: 35px;
-      left: 31px;
-      width: 17px;
+        }
+        .logo-animate {
+          top: 25px;
+          left: 31px;
+          width: 17px;
 
-    }
-    .logo-part-618 {
-      bottom: -85px;
-      left: 32px;
-      width: 17px;
+        }
+        .logo-part-618 {
+          bottom: -85px;
+          left: 32px;
+          width: 17px;
 
+        }
     }
   }
 }
 
 @media screen and (max-width: 480px) {
   .logo-subscribe {
+    .logo-pos {
+      left: 0;
+      .logo-part-1 {
+        width: 22px;
+        left: 11px;
 
-    .logo-part-1 {
-      width: 22px;
-      left: 11px;
+      }
+      .logo-animate {
+        top: 15px;
+        left: 21px;
+        width: 12px;
 
+      }
+      .logo-part-618 {
+        bottom: -60px;
+        left: 21px;
+        width: 12px;
+
+      }
     }
-    .logo-animate {
-      top: 24px;
-      left: 21px;
-      width: 12px;
 
-    }
-    .logo-part-618 {
-      bottom: -60px;
-      left: 21px;
-      width: 12px;
 
-    }
   }
 
   .subscribe {

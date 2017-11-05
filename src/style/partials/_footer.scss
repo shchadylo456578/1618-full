@@ -3,7 +3,7 @@
   background-color: #363636;
   //overflow: hidden;
   .logofoooter {
-    transform:translateY(-38px);
+    transform:translateY(-39px);
     //position: relative;
     .logo-footer-pos {
       .logo-part-2 {
@@ -53,9 +53,13 @@
             a {
               @include p-text;
               color: #fff;
-            }
-            .map {
-              text-decoration: underline;
+              &:hover {
+                color: #9E9E9E;
+                transition: all 0.3s ease;
+              }
+              &.map {
+                text-decoration: underline;
+              }
             }
           }
         }
@@ -115,6 +119,10 @@
           @include size-xs(5);
           @include p-text;
           color: #fff;
+          &:hover {
+            transition: all 0.3s ease;
+            color: #9E9E9E;
+          }
         }
 
         .link:before {
@@ -127,7 +135,10 @@
           display: inline-block;
           left: -12px;
           top: 2px;
-
+        }
+        .link:hover:before {
+          background-color: #9E9E9E;
+          transition: all 0.3s ease;
         }
       }
     }

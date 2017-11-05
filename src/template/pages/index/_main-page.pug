@@ -32,13 +32,50 @@
       .carusel
         .owl-carousel.owl-theme
           .item.image-slide(data-content="Квартира з алюмінієвим плінтусом")
-            img.owl-lazy(data-src='images/blog-page/blog-photo-2.jpg', alt='Lazy Owl Image')
+            amp-img(src="images/blog-page/blog-photo-1.jpg",
+                 srcset="images/blog-page/blog-photo-1.jpg 1920w, images/blog-page/blog-photo-1.jpg 1280w, images/blog-page/blog-photo-1.jpg 768w,images/blog-page/blog-photo-1.jpg 375w"
+                          width="1300"
+                          height="735"
+                          layout="responsive"
+                          alt="AMP")
+              div(fallback) offline
+              noscript
+                img(src="images/blog-page/blog-photo-1.jpg" width="1300" height="735", alt="AMP")
+
+
           .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            img.owl-lazy(data-src='images/main-page/photo-slider-2.jpg', alt='Lazy Owl Image')
+            amp-img(src="images/main-page/photo-slider-3.jpg",
+                  srcset="images/main-page/photo-slider-3.jpg 1920w, images/main-page/photo-slider-3.jpg 1280w, images/main-page/photo-slider-3.jpg 768w, images/main-page/photo-slider-3.jpg 375w"
+                          width="1300"
+                          height="735"
+                          layout="responsive"
+                          alt="AMP")
+              div(fallback) offline
+              noscript
+                img(src="images/main-page/photo-slider-3.jpg" width="1300" height="735", alt="AMP")
+
           .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            img.owl-lazy(data-src='images/main-page/photo-slider-3.jpg', alt='Lazy Owl Image')
+            amp-img(src="images/main-page/photo-slider-3.jpg",
+                  srcset="images/main-page/photo-slider-3.jpg 1920w, images/main-page/photo-slider-3.jpg 1280w, images/main-page/photo-slider-3.jpg 768w, images/main-page/photo-slider-3.jpg 375w"
+                        width="1300"
+                        height="735"
+                        layout="responsive"
+                        alt="AMP")
+              div(fallback) offline
+              noscript
+                img(src="images/main-page/photo-slider-3.jpg" width="1300" height="735", alt="AMP")
+
           .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            img.owl-lazy(data-src='images/main-page/photo-slider-2.jpg', alt='Lazy Owl Image')
+            amp-img(src="images/blog-page/blog-photo-1.jpg",
+                srcset="images/blog-page/blog-photo-1.jpg 1920w, images/blog-page/blog-photo-1.jpg 1280w, images/blog-page/blog-photo-1.jpg 768w, images/blog-page/blog-photo-1.jpg 375w"
+                        width="1300"
+                        height="735"
+                        layout="responsive"
+                        alt="AMP")
+              div(fallback) offline
+              noscript
+                img(src="images/blog-page/blog-photo-1.jpg" width="1300" height="735", alt="AMP")
+
         .owl-nav
           .owl-prev
             #left

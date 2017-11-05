@@ -39,8 +39,8 @@
       @include navbar();
       opacity: 1;
       transition: all 1s ease-out;
-      //position: fixed;
-      //right: 0;
+      position: fixed;
+      right: 0;
 
       &.fade-out {
         opacity: 0;
@@ -84,7 +84,7 @@
         position: relative;
       }
       .owl-item {
-        .item img {
+        .item {
           height: auto;
           width:100%;
           display: block;
