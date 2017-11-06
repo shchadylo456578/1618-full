@@ -1,0 +1,87 @@
+.logo-page-404{
+  .logo-pos {
+    position: absolute;
+    left: 2.5%;
+    height: 100%;
+    @include to($max_width: 1280px) {
+      left: .8%;
+    }
+    .logo-404 {
+      width: 235px;
+      top: 0;
+      left: 0;
+      position: absolute;
+
+      @include to($max_width: 768px) {
+        width: 160px;
+      }
+      @include to($max_width: 480px) {
+        width: 150px;
+      }
+      @include to($max_width: 375px) {
+        width: 170px;
+      }
+      @include to($max_width: 320px) {
+        width: 150px;
+      }
+
+    }
+  }
+}
+
+.page-404 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  .page-404-main {
+    @include col;
+    @include size(8);
+    @include shift-padding-left(1);
+    .page-404-text {
+      @include size(8);
+      @include size-sm(12);
+      @include size-xs(12);
+
+
+      padding: 10% 0 3% 0;
+
+      @include to($max_width: 768px) {
+        padding: 15% 0 3% 0;
+      }
+      @include to($max_width: 480px) {
+        padding: 20% 0 3% 0;
+      }
+
+      h1 {
+        @include header-text;
+      }
+      p {
+        @include p-text;
+      }
+    }
+
+    .page-404-button {
+      @include size(5);
+      @include size-sm(8);
+      @include size-xs(12);
+      padding-top: 2%;
+      .button {
+        @include button();
+        text-align: center;
+        display: inline-block;
+        padding: 5%;
+
+      }
+    }
+  }
+  .navbar {
+    @include col;
+    @include size(3);
+    @include size-xs(3);
+    #navbar {
+      @include navbar();
+    }
+  }
+}

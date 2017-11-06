@@ -1,0 +1,137 @@
+.logo-thank-you {
+  .logo-pos {
+    position: absolute;
+    left: 2.5%;
+    height: 100%;
+    @include to($max_width: 1280px) {
+      left: .8%;
+    }
+    .logo-part-1 {
+      width: 40px;
+      left: 37px;
+      position: absolute;
+
+    }
+    .logo-animate {
+      position: absolute;
+      background: #363636;
+      top: 35px;
+      left: 55px;
+      width: 22px;
+      height: 100%;
+
+    }
+    .logo-part-618 {
+      position: absolute;
+      bottom: -105px;
+      left: 55px;
+      width: 22px;
+
+    }
+  }
+}
+
+.thank-you {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  .thank-you-main {
+    @include col;
+    @include size(8);
+    @include shift-padding-left(0.9);
+    .thank-you-text {
+      @include size(8);
+      @include size-sm(12);
+      @include size-xs(12);
+
+      padding-bottom: 3%;
+
+      h1 {
+        @include header-text;
+      }
+    }
+
+    .thank-you-button {
+      @include size(5);
+      @include size-sm(8);
+      @include size-xs(12);
+      padding-top: 2%;
+      .button {
+        @include button();
+        text-align: center;
+        display: inline-block;
+        padding: 5%;
+
+      }
+    }
+  }
+  .navbar {
+    @include col;
+    @include size(3);
+    @include size-xs(3);
+    #navbar {
+      @include navbar();
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-thank-you {
+    .logo-pos {
+      .logo-part-1 {
+        width: 31px;
+        left: 17px;
+
+      }
+      .logo-animate {
+        top: 25px;
+        left: 31px;
+        width: 17px;
+
+      }
+      .logo-part-618 {
+        bottom: -85px;
+        left: 32px;
+        width: 17px;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-thank-you {
+    .logo-pos {
+      left: 0;
+      .logo-part-1 {
+        width: 22px;
+        left: 11px;
+
+      }
+      .logo-animate {
+        top: 15px;
+        left: 21px;
+        width: 12px;
+
+      }
+      .logo-part-618 {
+        bottom: -60px;
+        left: 21px;
+        width: 12px;
+
+      }
+    }
+  }
+
+  .thank-you {
+    .thank-you-main {
+      .subscribe-button {
+        .button {
+          border: 2px solid #363636;
+        }
+      }
+    }
+  }
+}
