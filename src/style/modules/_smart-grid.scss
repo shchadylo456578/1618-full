@@ -28,10 +28,16 @@ $offset_xs_one_side: ($offset_xs / 2);
 $offset_xxs_one_side: ($offset_xxs / 2);
 
 $fields: 15px;
+$fields_xxs: 10px;
 
 @mixin wrapper-full(){
-    padding-left: $fields;
-    padding-right: $fields;
+  padding-left: $fields;
+  padding-right: $fields;
+
+  @include xxs-block(){
+    padding-left: $fields_xxs;
+    padding-right: $fields_xxs;
+  }
 }
 
 @mixin row-offsets(){
@@ -141,10 +147,13 @@ $fields: 15px;
     @include col-offsets(margin);
 }
 
-@mixin col-float(){
+@mixin col-float-left(){
     float: left;
-    box-sizing: border-box;
-    @include col-offsets(margin);
+
+}
+@mixin col-float-right(){
+  float: right;
+;
 }
 
 @mixin col-ib(){

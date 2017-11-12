@@ -1,11 +1,11 @@
 .wrapper {
   position: relative;
-  @include wrapper();
+  @include wrapper-full();
   @include reset();
-  //@include shift-left(2);
-  //@include shift-lg-left(1);
-  //@include shift-md-left(0.5);
-  //@include shift-xs-left(-0.2);
+  @include shift-left(2);
+  @include shift-lg-left(1);
+  @include shift-md-left(0.5);
+  @include shift-xs-left(-0.2);
   height: auto;
 
   .logo-an {
@@ -53,7 +53,7 @@
         }
         .logo-animate {
           top: 33px;
-          left: 55px;
+          left: 56px;
           width: 21px;
 
         }
@@ -131,6 +131,32 @@
       .logo-pos {
         .logo-part-1 {
           width: 16px;
+          left: 9.5px;;
+
+        }
+        .logo-animate {
+          top: 10px;
+          left: 16px;
+          width: 9px;
+
+        }
+        .logo-animate:before {
+          background-size: 9px 23px;
+          top: 102%;
+          height: 40px;
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    .logo-an {
+      .logo-pos {
+        .logo-part-1 {
+          width: 16px;
           left: 9.5px;
 
         }
@@ -149,6 +175,4 @@
       }
     }
   }
-
 }
-

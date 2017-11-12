@@ -1,81 +1,67 @@
 .main-page {
   position: relative;
   .header {
-    @include shift-padding-left(0.9);
-    @include row-float;
+    @include shift-left(0.9);
     position: relative;
     padding-bottom: 50%;
-    .header-text {
 
+    .row {
+      @include row-flex();
+      justify-content: space-between;
 
-      @include col-float;
-      @include size(9);
-      @include size-xs(8);
-      @include size-xxs(7.5);
+      .header-text {
+        @include col;
+        @include size(9);
+        @include size-xs(8);
+        @include size-xxs(7.5);
 
-      .text {
-        @include size(7);
-        @include size-xs(11.5);
+        .text {
+          @include size(5);
+          @include size-xxlg(7);
+          @include size-xlg(8);
+          @include size-xs(11.5);
 
-        h1 {
-          @include header-text();
-        }
-        p {
-          font-size: 21px;
-          line-height: 35px;
-          @include p-text;
-        }
-      }
-
-    }
-
-    .navbar {
-      @include col-float;
-      @include size(3);
-      @include size-xs(4);
-      @include size-xxs(4.5);
-
-
-      @include navbar();
-      opacity: 1;
-      transition: all 1s ease-out;
-      position: fixed;
-      right: 0;
-
-      &.fade-out {
-        opacity: 0;
-      }
-
-      .navigation {
-        @include navbar();
-
-      }
-      .nav-main {
-        font-weight: bold;
-      }
-
-      .nav-main:before {
-        background-color: #363636;
-        content: "";
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-        display: inline-block;
-        margin: 0 7% 2% 0;
-        @include to($max_width: 480px) {
-          width: 6px;
-          height: 6px;
+          h1 {
+            @include header-text();
+          }
+          p {
+            @include p-text;
+          }
         }
       }
-      .nav-main:hover:before {
-        background-color: #9E9E9E;
-        transition: all 0.3s ease;
+
+      .navbar {
+        @include col;
+        @include size(2.5);
+        @include size-xs(3.5);
+        @include size-xxs(4.2);
+        opacity: 1;
+        transition: all 1s ease-out;
+        position: fixed;
+        right: 0;
+
+        &.fade-out {
+          opacity: 0;
+        }
+        .navigation {
+          @include navbar();
+        }
+        .nav-active {
+          @include nav-active()
+
+        }
+        .en-link {
+          @include nav-en-link();
+        }
+        #navbar {
+          display: none;
+        }
       }
     }
   }
 
   #slider-container {
-    @include shift-padding-left(1);
+    @include shift-left(0.9);
     margin-bottom: 15%;
 
 
@@ -97,13 +83,13 @@
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
       }
-      //.item {
-      //  .img {
-      //    display: block;
-      //    width: 100%;
-      //    height: auto;
-      //  }
-      //}
+      .item {
+        .img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
 
       .owl-animated-out {
         z-index: 0;
@@ -217,8 +203,10 @@
         margin-top: 0;
 
         .owl-next, .owl-prev {
-          @include col;
-          @include size(3);
+          @include col();
+          @include size(3.2);
+          @include size-md(3);
+          @include size-xs(5);
           position: relative;
           background: none;
           #left, #right {
@@ -230,23 +218,21 @@
               color: #9E9E9E;
               transition: all 0.3s ease;
             }
-          }
-
-          #left:before, #right:before {
-            background-color: #363636;
-            content: "";
-            border-radius: 50%;
-            width: 4px;
-            height: 4px;
-            display: inline-block;
-            position: absolute;
-            left: 3%;
-            top: 15%;
-          }
-
-          #left:hover:before, #right:hover:before {
-            background-color: #9E9E9E;
-            transition: all 0.3s ease;
+            &:before {
+              background-color: #363636;
+              content: "";
+              border-radius: 50%;
+              width: 4px;
+              height: 4px;
+              display: inline-block;
+              position: absolute;
+              left: 3%;
+              top: 22%;
+            }
+            &:hover:before {
+              background-color: #9E9E9E;
+              transition: all 0.3s ease;
+            }
           }
         }
       }
@@ -358,6 +344,7 @@
       @include col;
       @include size(7.8);
       @include size-xs(6.8);
+      min-height: 100vh;
       padding-bottom: 10%;
 
       .columns {

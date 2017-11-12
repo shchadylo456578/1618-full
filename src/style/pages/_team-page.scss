@@ -1,192 +1,189 @@
 .team-page {
-  //TODO: Header
+
   .header {
-    display: -webkit-flex;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    .team-header {
-      padding-left: 8.33%;
-      @include col;
-      @include size(4.6);
-      @include size-xxlg(6);
-      @include size-md(7);
-      @include size-xs(8);
-      @include size-xxs(7);
-      padding-bottom: 2%;
-      h1 {
-        @include header-text;
-      }
-      p {
-        //@include size(4.1);
-        @include p-text;
-      }
-    }
+    @include shift-left(0.9);
+    padding-bottom: 2%;
+    .row {
+      @include row-flex();
+      justify-content: space-between;
 
-    //NAV
+      .text-header {
+        @include col();
+        @include size(5);
+        @include size-xs(7);
 
-    .navbar {
-      @include navbar();
-      opacity: 1;
-      transition: all 1s ease-out;
-      position:fixed;
-      right: 0;
-      @include col();
-      @include size(2.35);
-      @include size-xs(4);
-      @include size-xxs(4.5);
-      &.fade-out{
-        opacity: 0;
+        h1 {
+          @include header-text;
+        }
+        p {
+          @include p-text;
+        }
       }
-      #navbar {
+
+      .navbar {
+        @include col;
+        @include size(2.5);
+        @include size-xs(3.5);
+        @include size-xxs(4.2);
+        opacity: 1;
+        transition: all 1s ease-out;
+        position: fixed;
+        right: 0;
+        z-index: 100;
+
+        &.fade-out {
+          opacity: 0;
+        }
         .navigation {
           @include navbar();
+        }
+        .nav-active {
+          @include nav-active()
 
         }
-        .nav-team {
-          font-weight: bold;
-
+        .en-link {
+          @include nav-en-link();
         }
-        .nav-team:before {
-          background-color: #363636;
-          content: "";
-          border-radius: 50%;
-          width: 8px;
-          height: 8px;
-          display: inline-block;
-          margin: 0 7% 2% 0;
+        #navbar {
+          display: none;
         }
-        .nav-team:hover:before {
-          background-color: #9E9E9E;
-          transition: all 0.3s ease;
-        }
-
       }
     }
   }
 
   .team-photo {
-    .photo {
-      padding-left: 8.33%;
-      @include col();
-      @include size(11);
+    @include shift-left(0.9);
+    @include size(10.2);
+    margin-bottom: 8vh;
+    @include to($max-width: 768px) {
+      margin-bottom: 8vh;
+    }
+    @include to($max-width: 480px) {
+      margin-bottom: 5vh;
     }
   }
 
+  //TODO: Team-photo
+  .team-photo-items {
+    @include size(7.4);
+    @include size-xs(6.4);
+    @include shift-left(0.9);
+    .row:nth-child(odd), .row:nth-child(even) {
+      margin-bottom: 0;
+    }
+    .row {
+      @include row-flex;
+      justify-content: space-between;
 
-  .team-main {
-    //TODO: Team-photo
-    .team-photo-items {
-      padding-left: 8.33%;
-      @include col;
-      @include size(8);
-      @include size-xs(7);
+      .col {
+        @include col();
+        @include size(5.5);
+        @include size-xs(12);
+        position: relative;
+        margin-bottom: 8vh;
 
+        @include to($max-width: 768px) {
+          margin-bottom: 6vh;
+        }
+        @include to($max-width: 480px) {
+          margin-bottom: 5vh;
+        }
 
-      .items {
-        @include row-flex;
-        justify-content: space-between;
+        .text-about {
+          position: absolute;
+          bottom: 5%;
+          left: 15%;
+          transform: translate(-5%, -15%);
 
-        .item {
-          @include col;
-          @include size(5.5);
-          @include size-xs(12);
-          position: relative;
-          margin-top: 29px;
-          .text-about {
-            position: absolute;
-            bottom: 5%;
-            left: 15%;
-            transform: translate(-5%, -15%);
-
-            .text-prof {
-              @include photo-text-prof;
-            }
-            .text-name {
-             @include photo-on-text;
-            }
+          .text-prof {
+            @include photo-text-prof;
+          }
+          .text-name {
+            @include photo-on-text;
           }
         }
       }
     }
+  }
 
-    //TODO: Article
-    .team-text-inform {
-      @include col;
-      @include size(5);
-      @include size-xxlg(5);
-      @include size-lg(6);
-      @include size-sm(7);
-      @include size-xs(8);
+  //TODO: Article
+  .team-text-inform {
+    @include size(3);
+    @include size-xxlg(4);
+    @include size-xlg(4.5);
+    @include size-lg(5);
+    @include size-sm(6);
+    @include size-xs(7);
+    @include shift-left(0.9);
+    margin-bottom: 5%;
+    margin-top: 5%;
 
-      padding-left: 8.33%;
-      padding-top: 10%;
-      .text-inform {
-        h1 {
-          @include header-text;
+    .text-inform {
+      h1 {
+        @include header-text;
+      }
+      p {
+        @include p-text;
+      }
+    }
+  }
 
+  .team-article {
+    @include shift-left(0.9);
+    @include size(7.4);
+    @include size-xs(6.4);
+    margin-bottom: 10%;
+
+    .row {
+      @include row-flex;
+      justify-content: space-between;
+
+      .col {
+        @include col();
+        @include size(5.5);
+        @include size-xs(12);
+        @include border-bottom-text;
+
+        margin-bottom: 8vh;
+        @include to($max-width: 768px) {
+          margin-bottom: 6vh;
+        }
+        @include to($max-width: 480px) {
+          margin-bottom: 5vh;
+        }
+
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          position: relative;
+          @include title-h2;
+
+          padding-bottom: 5%;
+        }
+        h2:before {
+          @include pseudo-dot-h2;
         }
         p {
           @include p-text;
-
+          margin-top: auto;
+          padding-bottom: 3%;
         }
       }
-    }
+      //TODO: Button
+      .team-button {
+        @include col();
+        @include size(5.5);
+        @include size-xs(12);
+        //padding-top: 10%;
 
-    .team-article {
-      padding-left: 8.33%;
-      @include col;
-      @include size(8);
-      @include size-xs(7);
-
-      .items {
-        @include row-flex;
-        justify-content: space-between;
-        padding-bottom: 10%;
-        .item {
-          @include col;
-          @include size(5.5);
-          @include size-xs(12);
-          padding-top: 10%;
-          padding-bottom: 2%;
-          @include border-bottom-text;
-          height: auto;
-
-          h2 {
-            position: relative;
-            @include title-h2;
-
-            padding-bottom: 5%;
-          }
-          h2:before {
-
-            @include pseudo-dot-h2;
-
-          }
-          p {
-           @include p-text;
-          }
-        }
-
-        //TODO: Button
-        .team-button {
-          @include col;
-          @include size(5.5);
-          @include size-xs(12);
-
-
-
-          padding-top: 10%;
-          .button {
-            @include button();
-            display: inline-block;
-            padding: 5% 2% 4.5%;
-            text-align: center;
-          }
+        .button {
+          @include button();
+          display: inline-block;
+          text-align: center;
         }
       }
     }
   }
+
 }

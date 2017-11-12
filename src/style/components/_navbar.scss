@@ -2,59 +2,70 @@ $text-color: #363636;
 
 @mixin navbar() {
   position: relative;
-  z-index: 100;
-  #navbartitle{
-    cursor: pointer;
+  cursor: pointer;
+  display: block;
+  font-size: 25px;
+  color: $text-color;
+  font-weight: 300;
+  line-height: 52px;
+
+  @include to($max_width: 1280px) {
+    font-size: 21px;
+    line-height: 40px;
   }
 
-  #navbar {
-    display: none;
-
-  }
-  a {
-    display: block;
-  }
-  .navigation {
-    font-size: 25px;
-    color: $text-color;
-    font-weight: 300;
-    line-height: 60px;
-    &:hover {
-      color: #9E9E9E;
-      transition: all 0.3s ease;
-
-
-    }
+  @include to($max_width: 768px) {
+    font-size: 17px;
+    line-height: 35px;
   }
 
-  .navigation:before {
+  &:hover {
+    color: #9E9E9E;
+    transition: all 0.3s ease;
+  }
+
+  &:before {
     background-color: #363636;
     content: "";
     border-radius: 50%;
     width: 4px;
     height: 4px;
     position: absolute;
-    left: -10%;
+    left: -13%;
     top: 44%;
   }
-  .navigation:hover:before {
+
+  &:hover:before {
     background-color: #9E9E9E;
     transition: all 0.3s ease;
 
 
   }
-  .en-link {
-    position: relative;
-    font-size: 19px;
-    line-height: 45px;
-    color: #9E9E9E;
-    &:hover {
-      color: #363636;
-      transition: all 0.3s ease;
-    }
+
+}
+
+
+@mixin nav-en-link() {
+  display: block;
+  position: relative;
+  font-size: 19px;
+  line-height: 45px;
+  color: #9E9E9E;
+
+  @include to($max_width: 1280px) {
+    line-height: 40px;
+  }
+  @include to($max_width: 768px) {
+    font-size: 15px;
+    line-height: 35px;
   }
 
-  .en-link:before {
+  &:hover {
+    color: #363636;
+    transition: all 0.3s ease;
+  }
+
+  &:before {
     background-color: #9E9E9E;
     content: "";
     border-radius: 50%;
@@ -65,36 +76,49 @@ $text-color: #363636;
     left: -13%;
     top: 44%;
   }
-
-  .en-link:hover:before {
+  &:hover:before {
     background: #363636;
     transition: all 0.3s ease;
   }
+}
 
-  @media screen and (max-width: 1280px) {
-    .navigation {
-      font-size: 21px;
-      line-height: 40px;
-    }
-    .en-link {
-      line-height: 40px;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .navigation {
-      font-size: 16px;
-      line-height: 35px;
-    }
-    .en-link {
-      font-size: 15px;
-      line-height: 35px;
 
+@mixin nav-active() {
+  position: relative;
+  font-weight: bold;
+  &:before{
+    position: absolute;
+    background-color: #363636;
+    content: "";
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    top: 40%;
+    left: -13%;
+    @include to($max_width: 1920px) {
+      left: -14%;
+
+    }
+    @include to($max_width: 1280px) {
+      left: -13.5%;
+
+    }
+    @include to($max_width: 1024px) {
+      left: -14%;
+
+    }
+    @include to($max_width: 480px) {
+      width: 6px;
+      height: 6px;
     }
   }
 }
 
 @mixin nav-next-prev () {
   font-size: 25px;
+  line-height: 26px;
+
   color: $text-color;
   font-weight: 300;
   @media screen and (max-width: 1280px) {
@@ -102,5 +126,7 @@ $text-color: #363636;
   }
   @media screen and (max-width: 768px) {
     font-size: 16px;
+    line-height: 20px;
+
   }
 }

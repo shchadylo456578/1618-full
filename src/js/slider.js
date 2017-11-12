@@ -7,7 +7,7 @@ $(document).ready(function(){
       next = $("#right");
 
   owl.owlCarousel({
-        items : 2,
+        items : 4,
         stagePadding: '60',
         touchDrag  : false,
         mouseDrag  : false,
@@ -15,8 +15,8 @@ $(document).ready(function(){
         animateOut: 'bringOut',
         animateIn: 'bringIn',
         dots: false,
-        loop: false,
-        lazyLoad: false,
+        loop: true,
+        lazyLoad: true,
         margin: 30,
         nav:true,
         navText:['<div id="left">Попередній<br>проект</div>','<div id="right">Наступний<br>проект</div>'],

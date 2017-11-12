@@ -6,25 +6,26 @@
 
   .main-page
     .header
-      .header-text
-        .text
-          h1#changeWords Ви мрієте
-            br
-            |Ми проектуємо
-          p Раціональні, прості та практичні проекти квартир, будинків, офісів, громадських закладів та інших споруд, а також їх комплексне втілення.
+      .row
+        .header-text
+          .text
+            h1#changeWords Ви мрієте
+              br
+              |Ми проектуємо
+            p Раціональні, прості та практичні проекти квартир, будинків, офісів, громадських закладів та інших споруд, а також їх комплексне втілення.
 
-      .navbar
-        #navbartitle.navigation.title Меню
-        #navbar
-          a.navigation.nav-main(href="index.html") Головна
+        .navbar
+          #navbartitle.navigation.title Меню
+          #navbar
+            a.navigation.nav-active(href="index.html") Головна
 
-          a.navigation(href="index-team.html") Команда
+            a.navigation(href="index-team.html") Команда
 
-          a.navigation(href="index-portfolio.html") Портфоліо
+            a.navigation(href="index-portfolio.html") Портфоліо
 
-          a.navigation(href="index-blog.html") Блог
+            a.navigation(href="index-blog.html") Блог
 
-          a.en-link(href="#") English version
+            a.en-link(href="#") English version
 
 
     //TODO: SLIDER
@@ -32,55 +33,19 @@
       .carusel
         .owl-carousel.owl-theme
           .item.image-slide(data-content="Квартира з алюмінієвим плінтусом")
-            amp-img(src="images/blog-page/blog-photo-1.jpg",
-                 srcset="images/blog-page/blog-photo-1.jpg 1920w, images/blog-page/blog-photo-1.jpg 1280w, images/blog-page/blog-photo-1.jpg 768w,images/blog-page/blog-photo-1.jpg 375w"
-                          width="1300"
-                          height="735"
-                          layout="responsive"
-                          alt="AMP")
-              div(fallback) offline
-              noscript
-                img(src="images/blog-page/blog-photo-1.jpg" width="1300" height="735", alt="AMP")
+            img(src="images/blog-page/blog-photo-1.jpg")
+
+          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
+            img(src="images/main-page/photo-slider-3.jpg")
 
 
           .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            amp-img(src="images/main-page/photo-slider-3.jpg",
-                  srcset="images/main-page/photo-slider-3.jpg 1920w, images/main-page/photo-slider-3.jpg 1280w, images/main-page/photo-slider-3.jpg 768w, images/main-page/photo-slider-3.jpg 375w"
-                          width="1300"
-                          height="735"
-                          layout="responsive"
-                          alt="AMP")
-              div(fallback) offline
-              noscript
-                img(src="images/main-page/photo-slider-3.jpg" width="1300" height="735", alt="AMP")
+           img(src="images/main-page/photo-slider-3.jpg")
+
 
           .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            amp-img(src="images/main-page/photo-slider-3.jpg",
-                  srcset="images/main-page/photo-slider-3.jpg 1920w, images/main-page/photo-slider-3.jpg 1280w, images/main-page/photo-slider-3.jpg 768w, images/main-page/photo-slider-3.jpg 375w"
-                        width="1300"
-                        height="735"
-                        layout="responsive"
-                        alt="AMP")
-              div(fallback) offline
-              noscript
-                img(src="images/main-page/photo-slider-3.jpg" width="1300" height="735", alt="AMP")
+            img(src="images/blog-page/blog-photo-1.jpg")
 
-          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            amp-img(src="images/blog-page/blog-photo-1.jpg",
-                srcset="images/blog-page/blog-photo-1.jpg 1920w, images/blog-page/blog-photo-1.jpg 1280w, images/blog-page/blog-photo-1.jpg 768w, images/blog-page/blog-photo-1.jpg 375w"
-                        width="1300"
-                        height="735"
-                        layout="responsive"
-                        alt="AMP")
-              div(fallback) offline
-              noscript
-                img(src="images/blog-page/blog-photo-1.jpg" width="1300" height="735", alt="AMP")
-
-        .owl-nav
-          .owl-prev
-            #left
-          .owl-next
-            #right
 
       //TODO: ARTICLE
 

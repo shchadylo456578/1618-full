@@ -1,15 +1,39 @@
 .footer {
   position: relative;
   background-color: #363636;
-  //overflow: hidden;
-  .logofoooter {
-    transform:translateY(-39px);
-    //position: relative;
+  z-index: 500;
+  .logo-footer {
+
+    //transform: translateY(-38px);
+
     .logo-footer-pos {
+
+
       .logo-part-2 {
         position: absolute;
         width: 41px;
         left: 37px;
+        @include to($max_width: 1920px) {
+          left: 37px;
+          width: 40px;
+        }
+
+        @include to($max_width: 1440px) {
+          left: 37px;
+          width: 40px;
+        }
+        @include to($max_width: 1280px) {
+          left: 36px;
+          width: 41px;
+        }
+        @include to($max_width: 768px) {
+          width: 30px;
+          left: 17px;
+        }
+        @include to($max_width: 480px) {
+          width: 16px;
+          left: 9.5px;
+        }
 
       }
       .logo-animate {
@@ -17,53 +41,109 @@
         background: #fff;
         top: 33px;
         left: 55px;
-        width: 23px;
-        height: 77.2%;
+        width: 22px;
+        height: 245px;
+
+        @include to($max_width: 1920px) {
+          top: 33px;
+          left: 55px;
+          width: 21px;
+        }
+
+        @include to($max_width: 1440px) {
+          top: 33px;
+          left: 56px;
+          width: 21px;
+        }
+        @include to($max_width: 1280px) {
+          top: 33px;
+          left: 56px;
+          width: 21px;
+        }
+        @include to($max_width: 768px) {
+          top: 25px;
+          left: 31px;
+          width: 16px;
+        }
+        @include to($max_width: 480px) {
+          top: 10px;
+          left: 17px;
+          width: 9px;
+        }
 
       }
     }
   }
 
   .footer-head {
+    @include shift-left(0.9);
+    padding: 10% 0 5%;
 
-    padding: 15% 0 5%;
-    .footer-items-collection {
-      @include shift-padding-left(0.9);
-      .footer-text {
-        @include size-xs(7);
-        h1 {
-          @include header-text;
-          color: #fff;
-        }
-      }
 
-      .footer-item-columns {
-        @include row-float;
-        .items {
-          @include col-float;
-          @include size(4.4);
-          @include size-xs(12);
-          .item {
-            padding-bottom: 8%;
-            h2 {
-              @include title-h2;
-              padding-bottom: 3%;
-              color: #fff
-            }
-            a {
-              @include p-text;
-              color: #fff;
-              &:hover {
-                color: #9E9E9E;
-                transition: all 0.3s ease;
+     .row {
+       @include row-flex;
+       justify-content: space-between;
+
+
+       .footer-items-collection {
+         @include col();
+         @include size(7.4);
+         @include size-xs(7.4);
+
+         .footer-text {
+           @include size-xxs(12);
+
+           h1 {
+             @include header-text;
+             color: #fff;
+           }
+         }
+        .footer-item-columns {
+
+          @include row-flex;
+          justify-content: space-between;
+
+          .items {
+            @include col();
+            @include size(5);
+            @include size-xs(12);
+            .item {
+              padding-bottom: 8%;
+              h2 {
+                @include title-h2;
+                padding-bottom: 3%;
+                color: #fff
               }
-              &.map {
-                text-decoration: underline;
+              a {
+                @include p-text;
+                color: #fff;
+                &:hover {
+                  color: #9E9E9E;
+                  transition: all 0.3s ease;
+                }
+                &.map {
+                  text-decoration: underline;
+                }
               }
             }
           }
         }
       }
+       .footer-nav {
+         @include col;
+         @include size(3);
+         @include size-xs(4);
+         @include size-xxs(4.5);
+         #navbar {
+           .navigation {
+             @include navbar-footer();
+           }
+
+           .en-link {
+             @include en-link();
+           }
+         }
+       }
     }
   }
 
@@ -145,92 +225,9 @@
   }
 }
 
-@media screen and (max-width: 1920px) {
-  .wrapper {
-    .logofoooter {
-      .logo-footer-pos {
-        .logo-part-2 {
-          left: 37px;
-          width: 40px;
-
-        }
-        .logo-animate {
-
-          top: 33px;
-          left: 55px;
-          width: 21px;
-
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .wrapper {
-    .logofoooter {
-
-      .logo-footer-pos {
-        .logo-part-2 {
-          position: absolute;
-          left: 37px;
-          width: 40px;
-
-        }
-        .logo-animate {
-
-          top: 33px;
-          left: 56px;
-          width: 21px;
-
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .wrapper {
-    .logofoooter {
-
-      .logo-footer-pos {
-        .logo-part-2 {
-          position: absolute;
-          left: 36px;
-          width: 41px;
-
-        }
-        .logo-animate {
-
-          top: 33px;
-          left: 56px;
-          width: 21px;
-
-        }
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 768px) {
   .footer {
     .wrapper {
-      .logofoooter {
-
-        .logo-footer-pos {
-          .logo-part-2 {
-            width: 30px;
-            left: 17px;
-
-          }
-          .logo-animate {
-            top: 25px;
-            left: 31px;
-            width: 16px;
-
-          }
-        }
-      }
       .footer-head {
         padding-bottom: 67%;
       }
@@ -252,23 +249,6 @@
 @media screen and (max-width: 480px) {
   .footer {
     .wrapper {
-
-      .logofoooter {
-
-        .logo-footer-pos {
-          .logo-part-2 {
-            width: 16px;
-            left: 9.5px;
-
-          }
-          .logo-animate {
-            top: 10px;
-            left: 17px;
-            width: 9px;
-          }
-        }
-      }
-
       .footer-head {
         padding-bottom: 10%;
       }
@@ -297,53 +277,3 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .wrapper {
-    .logo-an {
-      .logo-pos {
-        .logo-part-1 {
-          width: 30px;
-          left: 17px;
-        }
-        .logo-animate {
-          top: 25px;
-          left: 31px;
-          width: 16px;
-
-        }
-        .logo-animate:before {
-          background-size: 16px 42px;
-          height: 40px;
-
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .wrapper {
-    .logo-an {
-      .logo-pos {
-        .logo-part-1 {
-          width: 16px;
-          left: 9.5px;
-
-        }
-        .logo-animate {
-          top: 10px;
-          left: 17px;
-          width: 9px;
-
-        }
-        .logo-animate:before {
-          background-size: 9px 23px;
-          top: 102%;
-          height: 40px;
-
-        }
-      }
-    }
-  }
-
-}

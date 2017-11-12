@@ -1,29 +1,31 @@
 .wrapper
-  .logo
-    .logo-part-1
-      img(src="images/svg/logo-part-1.svg", alt="logo")
-    .logo-animate
+  .logo-an
+    .logo-pos
+      img.logo-part-1(src="images/svg/logo-part-1.svg", alt="logo")
+      .logo-animate
   .project-blog
-    .main-block-size
-      .poroject-header-text
-        h1 Як закинутий цех перетворити на офіс
-        p У цій статті ми порівняємо життя в заміському будинку та квартирі. Дізнайтеся, що для вас підійде краще.
+    .header
+      .row
+        .text-header
+          .text
+            h1 Як закинутий цех перетворити на офіс
+            p У цій статті ми порівняємо життя в заміському будинку та квартирі. Дізнайтеся, що для вас підійде краще.
 
-      .navbar
-        #navbartitle.navigation.title Меню
-        #navbar
-          a.navigation.nav-main(href="index.html") Головна
+        .navbar
+          #navbartitle.navigation.title Меню
+          #navbar
+            a.navigation(href="index.html") Головна
 
-          a.navigation(href="index-slider.html") Команда
+            a.navigation(href="index-team.html") Команда
 
-          a.navigation(href="index-portfolio.html") Портфоліо
+            a.navigation(href="index-portfolio.html") Портфоліо
 
-          a.navigation(href="index-blog.html") Блог
+            a.navigation(href="index-blog.html") Блог
 
-          a.en-link(href="#") English version
+            a.en-link(href="#") English version
 
-        #back
-          a.back(href="") На початок
+          #back
+            a.back(href="") На початок
 
     .project-main-photo
       .photo

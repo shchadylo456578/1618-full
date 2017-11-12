@@ -1,266 +1,291 @@
 .project-blog {
 
-    .main-block-size {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
+  .header {
+    margin-bottom: 5%;
+    @include shift-left(0.9);
+
+    .row {
+      @include row-flex;
       justify-content: space-between;
 
-      .poroject-header-text {
+      //text
 
-        padding-left: 8.33%;
+      .text-header {
         @include col;
-        @include size(6);
-        @include size-xxlg(6.5);
-        @include size-md(7);
+        @include size(9);
         @include size-xs(8);
-        @include size-xxs(7);
+        @include size-xxs(7.5);
+
+        .text {
+          @include size(6);
+          @include size-xxlg(7);
+          @include size-xlg(9);
+          @include size-xs(11);
+        }
 
         h1 {
           @include header-text;
         }
+
         p {
           @include p-text;
         }
       }
 
+      //NAV
+
       .navbar {
-        @include navbar();
+        @include col;
+        @include size(2.5);
+        @include size-xs(3.5);
+        @include size-xxs(4.2);
         opacity: 1;
         transition: all 1s ease-out;
-        position:fixed;
+        position: fixed;
         right: 0;
-        @include col();
-        @include size(2.35);
-        @include size-xs(4);
-        @include size-xxs(4.5);
-        &.fade-out{
+
+        &.fade-out {
           opacity: 0;
         }
         .navigation {
           @include navbar();
         }
+        .nav-active {
+          @include nav-active()
+
+        }
+        .en-link {
+          @include nav-en-link();
+        }
+        #navbartitle {
+          margin-bottom: 60%;
+
+        }
         #navbar {
+          display: none;
           padding-bottom: 60%;
         }
 
         #back {
           @include nav-next-prev;
+
           .back {
             position: relative;
             display: block;
             font-weight: 300;
-            margin-left: 7%;
-
-          }
-          .back:before {
-            position: absolute;
-            top: 40%;
-            left: -7.5%;
-            background-color: #363636;
-            content: "";
-            border-radius: 80%;
-            width: 4px;
-            height: 4px;
-            display: inline-block;
-
+            &:before {
+              position: absolute;
+              left: -15%;
+              top: 44%;
+              background-color: #363636;
+              content: "";
+              border-radius: 80%;
+              width: 4px;
+              height: 4px;
+              display: inline-block;
+              @include to($max_width: 480px) {
+                top: 36%;
+              }
+            }
           }
         }
       }
+    }
+  }
 
+  //TODO: PROJECT-MAIN-CONTENET
 
-      //TODO: PROJECT-MAIN-CONTENET
+  .project-main-content {
+    @include shift-left(0.9);
+    @include size(7.4);
+    @include size-xs(6.4);
 
-      .project-main-content {
-        padding-left: 8.33%;
+    .project-text {
+      padding: 10% 0;
+
+      .item-task {
+
+        h2 {
+          position: relative;
+          @include title-h2;
+          padding-bottom: 2%;
+
+        }
+        h2:before {
+          @include pseudo-dot-h2();
+          top: -6%;
+          left: -2%;
+        }
+        p {
+          @include p-text;
+        }
+      }
+    }
+
+    .item-decision {
+      padding-top: 10%;
+      h2 {
+        position: relative;
+        @include title-h2;
+        padding-bottom: 2%;
+
+      }
+      h2:before {
+        @include pseudo-dot-h2();
+        top: -6%;
+        left: -2%;
+
+      }
+
+      p {
+        @include p-text;
+
+      }
+    }
+
+    .project-photo {
+      padding: 10% 0 0;
+      .item-img {
+        padding-top: 3%;
+      }
+    }
+
+    .project-photo-2 {
+      @include row-flex();
+      justify-content: space-between;
+      padding: 10% 0 0;
+      .item-img {
+        @include col();
+        @include size(5.9);
+
+      }
+
+    }
+
+    .project-mini-photo {
+      @include row-flex;
+      justify-content: flex-start;
+      padding: 10% 0 10%;
+
+      .item-img {
+        padding-bottom: 2%;
+
+        @include col();
+        @include size(3);
+        @include size-xs(12);
+
+      }
+    }
+
+    .project-description {
+      padding: 10% 0 5%;
+      @include row-flex;
+      justify-content: space-between;
+
+      .items {
         @include col;
-        @include size(9);
-        @include size-xs(8);
-        @include size-xxs(7);
-        .project-text {
-          padding: 10% 0;
+        @include size(5);
+        @include size-xs(12);
+        .item {
+          padding-bottom: 15%;
+          .item-id {
+            @include text-prof;
 
-          .item-task {
+          }
+          .item-name {
+            @include title-h2;
 
-            h2 {
-              position: relative;
+          }
+          button {
+            @include button();
+          }
+        }
+      }
+    }
+
+    .project-team-feedback {
+      padding: 10% 0 5%;
+
+      h2 {
+        position: relative;
+        @include title-h2;
+        padding-bottom: 5%;
+
+      }
+      h2:before {
+        @include pseudo-dot-h2();
+        top: -6%;
+        left: -2%;
+      }
+      .feedbacks {
+        @include row-flex;
+        justify-content: space-between;
+        .items {
+          @include col;
+          @include size(5);
+          @include size-xs(12);
+          .item {
+            @include border-bottom-text;
+            padding-bottom: 5%;
+            margin-bottom: 15%;
+
+            .name {
               @include title-h2;
               padding-bottom: 2%;
-
             }
-            h2:before {
-              @include pseudo-dot-h2();
-              top: -6%;
-              left: -2%;
+            .profesion {
+              @include text-prof;
             }
-            p {
+            .text {
+              padding-top: 5%;
               @include p-text;
             }
           }
         }
+      }
+    }
 
-        .item-decision {
-          padding-top: 10%;
-          h2 {
-            position: relative;
-            @include title-h2;
-            padding-bottom: 2%;
+    //BTN
 
-          }
-          h2:before {
-            @include pseudo-dot-h2();
-            top: -6%;
-            left: -2%;
+    .buttons-network {
+      .items {
+        @include row-flex();
+        justify-content: space-between;
 
-          }
-
-          p {
-            @include p-text;
-
-          }
-        }
-
-        .project-photo {
-          padding: 10% 0 0;
-          .item-img {
-            padding-top: 3%;
-          }
-        }
-
-        .project-photo-2 {
-          @include row-flex();
-          justify-content: space-between;
-          padding: 10% 0 0;
-          .item-img {
-            @include col();
-            @include size(5.9);
-
-          }
-
-        }
-
-        .project-mini-photo {
-          @include row-flex;
-          justify-content: flex-start;
-          padding: 10% 0 10%;
-
-          .item-img {
-            padding-bottom: 2%;
-
-            @include col();
-            @include size(3);
-            @include size-xs(12);
-
-          }
-        }
-
-        .project-description {
-          padding: 10% 0 5%;
-          @include row-flex;
-          justify-content: space-between;
-
-          .items {
-            @include col;
-            @include size(5);
-            @include size-xs(12);
-            .item {
-              padding-bottom: 15%;
-              .item-id {
-                  @include text-prof;
-
-              }
-              .item-name {
-                @include title-h2;
-
-              }
-              button {
-                @include button();
-              }
+        .item {
+          @include col();
+          @include size(4);
+          @include size-xs(12);
+          padding: 5% 0;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include button();
+            svg {
+              margin-right: 5px;
+              width: 1.2rem;
+              height: 1.2rem;
             }
           }
-        }
-
-        .project-team-feedback {
-          padding: 10% 0 5%;
-
-          h2 {
-            position: relative;
-            @include title-h2;
-            padding-bottom: 5%;
-
-          }
-          h2:before {
-            @include pseudo-dot-h2();
-            top: -6%;
-            left: -2%;
-          }
-          .feedbacks {
-            @include row-flex;
-            justify-content: space-between;
-            .items {
-              @include col;
-              @include size(5);
-              @include size-xs(12);
-              .item {
-                @include border-bottom-text;
-                padding-bottom: 5%;
-                margin-bottom: 15%;
-
-                .name {
-                  @include title-h2;
-                  padding-bottom: 2%;
-                }
-                .profesion {
-                  @include text-prof;
-                }
-                .text {
-                  padding-top: 5%;
-                  @include p-text;
-                }
-              }
-            }
-          }
-        }
-
-        .buttons-network {
-          .items {
-            @include row-flex();
-            justify-content: space-between;
-
-            .item {
-              @include col();
-              @include size(4);
-              @include size-xs(12);
-              padding: 5% 0;
-              button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                @include button();
-                svg {
-                  margin-right: 5px;
-                  width: 1.2rem;
-                  height: 1.2rem;
-                }
-              }
-              button:hover #facebook, button:hover #linkedin, button:hover #pinterest {
-                transition: ease 0.3s;
-                fill: #fff;
-              }
-            }
+          button:hover #facebook, button:hover #linkedin, button:hover #pinterest {
+            transition: ease 0.3s;
+            fill: #fff;
           }
         }
       }
     }
+  }
+
   .project-main-photo {
     .photo {
-      padding-left: 8.33%;
-      @include col();
-      @include size(11);
+      @include shift-left(0.9);
+      @include size(10.2);
       margin-bottom: 5%;
     }
   }
 }
+
 .block-background {
   @include background-block();
 
@@ -318,7 +343,6 @@
             @include slider-botton-text;
             padding-left: 15%;
             cursor: pointer;
-
 
           }
 

@@ -1,50 +1,51 @@
 .wrapper
-  .logo
-    .logo-part-1
-      img(src="images/svg/logo-part-1.svg", alt="logo")
-    .logo-animate
+  .logo-an
+    .logo-pos
+      img.logo-part-1(src="images/svg/logo-part-1.svg", alt="logo")
+      .logo-animate
   .portfolio
     .portfolio-collections
-      .portfolio-main
-        .portfolio-heder-text
-          h1 Портфоліо 1.618
-          p Тут ми викладаємо наші роботи, від концептів до уже реалізованих об’єктів. Тут ви знайдете архітектурні проекти котеджів, як візуалізації так і реальні фото інтер’єрів квартир та офісів, а також усі інші творіння команди 1.618.
-        .portfolio-items
-          a(href="index-project.html")
-            .item(data-content="Як закинутий цех перетворити на офіс")
-              img(src="images/main-page/photo-slider-2.jpg", alt="photo-portfolio")
+      .row
+        .portfolio-main
+          .portfolio-heder-text
+            h1 Портфоліо 1.618
+            p Тут ми викладаємо наші роботи, від концептів до уже реалізованих об’єктів. Тут ви знайдете архітектурні проекти котеджів, як візуалізації так і реальні фото інтер’єрів квартир та офісів, а також усі інші творіння команди 1.618.
+          .portfolio-items
+            a(href="index-project.html")
+              .item(data-content="Як закинутий цех перетворити на офіс")
+                img(src="images/main-page/photo-slider-2.jpg", alt="photo-portfolio")
 
-          a(href="#")
-            .item(data-content="Квартира з алюмінієвим плінтусом")
-              img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
+            a(href="#")
+              .item(data-content="Квартира з алюмінієвим плінтусом")
+                img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
 
-          a(href="#")
-            .item(data-content="Квартира з алюмінієвим плінтусом")
-              img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
+            a(href="#")
+              .item(data-content="Квартира з алюмінієвим плінтусом")
+                img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
 
-          a(href="#")
-            .item(data-content="Квартира з алюмінієвим плінтусом")
-              img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
-
-
+            a(href="#")
+              .item(data-content="Квартира з алюмінієвим плінтусом")
+                img(src="images/main-page/photo-slider-1.jpg", alt="photo-portfolio")
 
 
-      .navbar
-        #navbartitle.navigation.title Меню
-        #navbar
-          a.navigation.nav-main(href="index.html") Головна
 
-          a.navigation(href="index-slider.html") Команда
 
-          a.navigation.nav-portfolio(href="index-portfolio.html") Портфоліо
+        .navbar
+          #navbartitle.navigation.title Меню
+          #navbar
+            a.navigation.nav-main(href="index.html") Головна
 
-          a.navigation(href="index-blog.html") Блог
+            a.navigation(href="index-team.html") Команда
 
-          a.en-link(href="#") English version
+            a.navigation.nav-active(href="index-portfolio.html") Портфоліо
 
-        #pagination
-          span.counter 1/8
-          a.next-page(href="#") Наступна
-            br
-            | сторінка
+            a.navigation(href="index-blog.html") Блог
+
+            a.en-link(href="#") English version
+
+          #pagination
+            span.counter 1/8
+            a.next-page(href="#") Наступна
+              br
+              | сторінка
 
