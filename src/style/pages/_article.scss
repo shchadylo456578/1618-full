@@ -31,6 +31,10 @@
         @include size(2.5);
         @include size-xs(3.5);
         @include size-xxs(4.2);
+        opacity: 1;
+        transition: all 1s ease-out;
+        position: fixed;
+        right: 0;
 
         &.fade-out {
           opacity: 0;
