@@ -10,6 +10,7 @@
 
 
       .logo-part-2 {
+        display:none;
         position: absolute;
         width: 41px;
         left: 37px;
@@ -39,9 +40,10 @@
       .logo-animate {
         position: absolute;
         background: #fff;
-        top: 33px;
+        // top: 33px;
+        top: 0!important;
         left: 55px;
-        width: 22px;
+        width: 21px;
         height: 245px;
 
         @include to($max_width: 1920px) {
@@ -152,7 +154,7 @@
     position: relative;
     @include shift-padding-left(0.1);
     @include shift-xlg-padding-left(0.2);
-    @include shift-lg-padding-left(0.25);
+    @include shift-lg-padding-left(0.3);
     @include shift-sm-padding-left(0.2);
     @include shift-xs-padding-left(0);
 
@@ -163,7 +165,7 @@
       @include size(9);
       @include size-xxs(8);
 
-      height: 22px;
+      height: 21px;
       background-color: white;
     }
     .logoline-618:before {
@@ -254,11 +256,11 @@
       }
       .footer-logo-down {
         .logoline-618 {
-          height: 10px;
+          height: 9px;
         }
         .logoline-618:before {
           background-size: 26px 26px;
-          height: 10px;
+          height: 9px;
 
         }
 

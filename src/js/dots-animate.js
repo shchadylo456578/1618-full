@@ -11,38 +11,38 @@ $(document).ready(function(){
   }
 
   var controller = new ScrollMagic.Controller();
-  var arrow = new TimelineMax;
+//   var arrow = new TimelineMax;
 
 
-  var arrowStartHeight = ($('.header-text').height() - 40) +'px';
-  var arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
-  var arrowBlackEnd = $('.footer').position().top+'px';
+//   var arrowStartHeight = ($('.header-text').height() - 40) +'px';
+//   var arrowEndHeight = ($(window).height()-$('#dotsAnimate').height())+'px';
+//   var arrowBlackEnd = $('.footer').position().top+'px';
 
 
 
-  arrow
-    .from('.logo-animate', 0, {height:arrowStartHeight})
-    .to('.logo-animate', 1, {height:arrowEndHeight},0)
-    ;
+//   arrow
+//     .from('.logo-animate', 0, {height:arrowStartHeight})
+//     .to('.logo-animate', 1, {height:arrowEndHeight},0)
+//     ;
 
-  var logoPinScene = new ScrollMagic.Scene({
-    triggerHook:0,
-    offset:'20%'
-  })
-  .setTween(arrow)
-  .setPin('.logo-pos',{pushFollowers:false})
-  .addTo(controller)
-  .addIndicators();
+//   var logoPinScene = new ScrollMagic.Scene({
+//     triggerHook:0,
+//     offset:'20%'
+//   })
+//   .setTween(arrow)
+//   .setPin('.logo-pos',{pushFollowers:false})
+//   .addTo(controller)
+//   .addIndicators();
 
-  var logofooterScene = new ScrollMagic.Scene({
-    triggerElement:'.footer',
-    offset:'172'
+//   var logofooterScene = new ScrollMagic.Scene({
+//     triggerElement:'.footer',
+//     offset:'172'
 
-    // duration:'20%'
-  })
-  .setPin('#logofooter',{pushFollowers:false})
-  .addTo(controller)
-  .addIndicators();
+//     // duration:'20%'
+//   })
+//   .setPin('#logofooter',{pushFollowers:false})
+//   .addTo(controller)
+//   .addIndicators();
 
 
   var menu_bottom_line_show = $('.footer').position().top - $(window).height();
@@ -64,7 +64,7 @@ $(document).ready(function(){
       $('.navbar').toggleClass('fade-out');
     }
 
-    console.log(event.scrollDirection);
+    // console.log(event.scrollDirection);
   });
 
       /*
@@ -120,11 +120,14 @@ $(document).ready(function(){
     menu_bottom_line_show = $('.footer').position().top - $(window).height();
     navbartitle.duration(menu_bottom_line_show);
 
-    console.log('dur!!',navbartitle.duration());
+    // console.log('dur!!',navbartitle.duration());
+    
+    $('.footer .logo-animate').height($('.footer .footer-logo-down').position().top + $('.footer .logo-animate').width());
 
     var dot = [];
 
     var container = $('#dotsAnimate');
+
     container.text('');
 
     for(var i = 0 ; i < 9 ; i++ ){

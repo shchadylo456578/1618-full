@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  overflow-x: hidden;
   @include wrapper-full();
   @include reset();
   @include shift-left(2);
