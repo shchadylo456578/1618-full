@@ -6,7 +6,7 @@ $article-h2-weight: bold;
 @mixin header-text() {
   color: $text-color;
   font-weight: $text-weight;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
   font-size: 66px;
   line-height: 68px;
   @media screen and (max-width: 1280px) {

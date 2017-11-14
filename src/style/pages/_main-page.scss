@@ -253,19 +253,18 @@
         vertical-align: top;
       }
       .image-slide:after {
-        position: absolute;
-        opacity: 0;
-        transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-      }
-      .image-slide:after {
         content: '';
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        opacity: 0;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
       }
+
       .image-slide:before {
         @include photo-on-text;
         @include size(5);
@@ -277,7 +276,6 @@
         bottom: 0;
         padding: 0 0 7% 10%;
         box-sizing: border-box;
-        -moz-box-sizing: border-box;
         opacity: 1;
       }
       .image-slide:hover:after, .image-slide:hover:before {

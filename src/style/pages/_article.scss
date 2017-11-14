@@ -1,29 +1,26 @@
-#blog-article {
-  .header {
+article {
+  @include shift-left(0.9);
+
+  header {
     margin-bottom: 5%;
-    @include shift-left(0.9);
     .row {
       @include row-flex;
       justify-content: space-between;
 
-      .text-header {
-        @include col;
-        @include size(9);
-        @include size-xs(8);
-        @include size-xxs(7.5);
-        .text {
-          @include size(5);
-          @include size-xxlg(7);
-          @include size-xlg(8);
-          @include size-xs(11.5);
-          h1 {
-            @include header-text;
-          }
-          p {
-            @include p-text;
-          }
-        }
+      .entry-meta {
+        margin-bottom: 7%;
 
+        @include col;
+        @include size(6);
+        @include size-xlg(7);
+        @include size-lg(8);
+        @include size-xs(7);
+        h1 {
+          @include header-text;
+        }
+        p {
+          @include p-text;
+        }
       }
 
       .navbar {
@@ -35,6 +32,7 @@
         transition: all 1s ease-out;
         position: fixed;
         right: 0;
+        z-index: 2;
 
         &.fade-out {
           opacity: 0;
@@ -73,7 +71,7 @@
               width: 4px;
               height: 4px;
               display: inline-block;
-              @include to($max_width:480px) {
+              @include to($max_width: 480px) {
                 top: 36%;
               }
             }
@@ -81,35 +79,30 @@
         }
       }
     }
-  }
+    //main-photo
+    .size-large {
+      @include size(11);
+      @include size-xs(12);
 
-  //main-photo
-  .article-main-photo {
-    @include shift-left(0.9);
-    @include size(10.2);
-    margin-bottom: 5%;
-
-
+    }
   }
 
   //main-content
-  .main-content {
-    @include shift-left(0.9);
+  .entry-content {
     @include size(7.4);
-    @include size-xs(6.4);
+    @include size-xs(12);
+    padding-bottom: 10%;
 
-    .article-text {
-      .item {
-        h2 {
-          @include title-h2;
-          position: relative;
-          padding-bottom: 2%;
-          &:before {
 
-          }
-        }
 
-        h2:before {
+    .entry-content-text {
+      @include size-xs(8);
+      @include size-xxs(6.5);
+      h2 {
+        @include title-h2;
+        position: relative;
+        padding-bottom: 3%;
+        &:before {
           display: block;
           position: absolute;
           content: '';
@@ -127,20 +120,20 @@
             height: 4px;
           }
         }
-
-        p {
-          @include p-text;
-        }
+      }
+      p {
+        @include p-text;
       }
 
-      .list-text {
+      ul {
         li {
           @include p-text;
           list-style-type: disc;
-          margin: 2% 7%;
+          margin: 2% 10%;
         }
       }
-      .quote {
+      //blockquote--1
+      .blockquote {
         margin: 5% 0;
         background-color: #F9F9F9;
         padding: 5% 15%;
@@ -159,40 +152,87 @@
           font-size: 1.5rem;
 
         }
-
       }
-      .quote-2 {
-        border-left: 4px solid #363636;
-        padding: 0 2%;
-        p {
-          @include p-text;
-          font-weight: bold;
 
+      //blockquote--2
+      blockquote {
+        .blockquote-background {
+          background-color: #F9F9F9;
         }
-        .resource {
-          padding-top: 2%;
-          font-weight: normal;
-          font-size: 1.5rem;
+        .quote-1 {
+          margin-bottom: 15%;
+          padding: 5% 10%;
+
+          & :last-child {
+            font-weight: 400;
+            font-size: 19px;
+            padding-top: 5px;
+            font-style: normal;
+
+            @include to($max_width: 480px) {
+              font-size: 16px;
+            }
+          }
+
+          p {
+            @include p-text;
+            font-style: italic;
+            font-weight: lighter;
+          }
         }
+
+        .quote-2 {
+          border-left: 4px solid #363636;
+          padding-left: 2%;
+          p {
+            @include p-text;
+            font-weight: bold;
+          }
+          & :last-child {
+            font-weight: 400;
+            font-size: 19px;
+            padding-top: 5px;
+            @include to($max_width: 480px) {
+              font-size: 16px;
+            }
+          }
+        }
+
 
       }
     }
 
-    .article-photo {
-      .item-images {
-        padding: 5% 0;
+
+
+
+
+    .gallery {
+      padding: 10% 0;
+
+
+      figure {
         @include row-flex();
         justify-content: space-between;
-        .item-img-1 {
-          @include col();
+        & :last-child {
+          @include to($max_width: 480px) {
+            padding-top: 3%;
+          }
+        }
+        a {
+          display: inline-block;
+          cursor: default;
+        }
+        .size-large {
+          @include col;
           @include size(12);
           padding-bottom: 3%;
 
         }
-        .item-img-2, .item-img-3 {
-          @include col();
+        .size-medium {
+          @include col;
           @include size(5.9);
           @include size-xs(12);
+
 
         }
       }
@@ -201,7 +241,7 @@
     .buttons-network {
       padding: 5% 0;
 
-      .items {
+      .row {
         @include row-flex();
         justify-content: space-between;
 
@@ -214,6 +254,9 @@
             justify-content: center;
             align-items: center;
             @include button();
+            @include to($max_width: 480px) {
+              margin-bottom: 20px;
+            }
             svg {
               margin-right: 5px;
               width: 1.5rem;
@@ -228,83 +271,89 @@
       }
     }
   }
-}
+  .entry-footer {
+    padding: 10% 0;
 
-.block-background {
-  @include background-block();
+    @include size(7.4);
+    @include size-xs(12);
 
-  .wrapper {
-    .article-blog {
-      @include shift-left(0.9);
-      @include size(7.4);
-      @include size-xs(6.4);
-
-      .article-text-blog {
-        padding-top: 10%;
-        h2 {
-          @include title-h2;
-          position: relative;
-          padding-bottom: 3%;
-        }
-        h2:before {
-          @include pseudo-dot-h2();
-          top: -7%;
-          left: -2%;
-        }
+    h2 {
+      @include title-h2;
+      position: relative;
+      padding-bottom: 5%;
+      &:before {
+        @include pseudo-dot-h2();
+        top: -7%;
+        left: -2%;
       }
 
-      .article-photo-blog {
-        position: relative;
-        a {
-          .caption {
-            position: absolute;
-            top: 80%;
-            left: 30%;
-            transform: translate(-30%, -80%);
-            h3 {
-              @include size(7);
-              @include size-lg(10);
-              @include size-xs(12);
-              @include photo-on-text
-            }
-          }
-        }
+    }
+    .size-large {
+      position: relative;
+      cursor: pointer;
+      z-index: 0;
+      img {
+        width: 100%;
+        vertical-align: top;
       }
 
-      .article-link-blog {
-        @include row-flex();
+      &:before {
+        content: attr(data-content);
+        @include photo-on-text;
+        @include size(7);
+        @include size-xlg(8);
+        @include size-xs(7);
+        position: absolute;
+        color: #fff;
+        z-index: 1;
+        bottom: 0;
+        padding: 0 0 7% 10%;
+        box-sizing: border-box;
+        opacity: 1;
+      }
+
+    }
+
+    .size-large:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      opacity: 0;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+    }
+
+    .size-large:hover:after, .size-large:hover:before {
+      opacity: 1;
+    }
+    .entry-content-text {
+      @include size-xs(8);
+      @include size-xxs(6.5);
+      .row {
+        margin-top: 10%;
+        @include row-flex;
         justify-content: space-between;
-        padding-bottom: 10%;
-        .item {
+        .col {
           align-self: flex-start;
           @include col();
           @include size(5.5);
           @include size-xs(12);
           @include title-h2;
-          padding-top: 10%;
           @include border-bottom-text;
-
-          padding-bottom: 2%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .wrapper {
-    #blog-article {
-      .main-content {
-        .article-blog {
-          .article-photo-blog {
-            a {
-              h3 {
-                font-size: 14px;
-              }
-            }
+          padding-bottom: 3%;
+          @include to($max_width: 480px) {
+            margin-bottom: 5%;
           }
         }
       }
     }
+
   }
+}
+.container-background{
+  @include background-block();
 }

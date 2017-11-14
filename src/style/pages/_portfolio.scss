@@ -110,6 +110,10 @@
         .en-link {
           @include nav-en-link();
         }
+        #navbartitle {
+          margin-bottom: 60%;
+
+        }
         #navbar {
           padding-bottom: 60%;
           display: none;
