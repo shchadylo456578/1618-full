@@ -1,7 +1,8 @@
 .footer {
-  position: relative;
+  //position: relative;
   background-color: #363636;
-  z-index: 500;
+  z-index: 1000;
+
   .logo-footer {
 
     //transform: translateY(-38px);
@@ -90,7 +91,6 @@
        .footer-items-collection {
          @include col();
          @include size(7.4);
-         @include size-xs(7.4);
 
          .footer-text {
            @include size-xxs(12);
@@ -132,15 +132,27 @@
         }
       }
        .footer-nav {
-         @include col;
-         @include size(3);
-         @include size-xs(4);
-         @include size-xxs(4.5);
+         position: absolute;
+         z-index: 100;
+
+         right: 22%;
+         @include to($max_width: 1440px) {
+           right: 13.4%;
+         }
+         @include to($max_width: 1280px) {
+           right: 12.2%;
+         }
+         @include to($max_width: 768px) {
+           right: 11.6%;
+         }
+         @include to($max_width: 480px) {
+           right: 5%;
+         }
          #navbar {
+
            .navigation {
              @include navbar-footer();
            }
-
            .en-link {
              @include en-link();
            }
@@ -152,7 +164,8 @@
   //TODO: Footer logo down
   .footer-logo-down {
     position: relative;
-    @include shift-padding-left(0.1);
+    @include shift-padding-left(0);
+    @include shift-xxlg-padding-left(0.1);
     @include shift-xlg-padding-left(0.2);
     @include shift-lg-padding-left(0.3);
     @include shift-sm-padding-left(0.2);
@@ -160,9 +173,9 @@
 
     .logoline-618 {
       position: relative;
-      //padding-left: 8.33%;
       @include col;
-      @include size(9);
+      @include size(7.4);
+      @include size-xlg(7.8);
       @include size-xxs(8);
 
       height: 21px;
@@ -186,7 +199,11 @@
   .footer-link-collections {
     .footer-links {
       @include col;
-      @include size(9);
+      @include size(7.4);
+      @include size-lg(8.2);
+      @include size-xxs(8);
+
+
       padding: 5% 0 5% 8.33%;
 
       .links {

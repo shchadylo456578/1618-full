@@ -1,8 +1,9 @@
 @mixin button() {
   width: 100%;
   border: 4px solid #363636;
+  border-radius: 0;
   background: transparent;
-  padding: 5% 0 4.5%;
+  padding: 10px 5px 9px 5px;
   color: #363636;
   font-size: 1.2rem;
   font-weight: bold;

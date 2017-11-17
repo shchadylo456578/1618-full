@@ -31,8 +31,11 @@ $text-color: #363636;
     width: 4px;
     height: 4px;
     position: absolute;
-    left: -13%;
+    left: -35%;
     top: 44%;
+    @include to($max_width: 480px) {
+      left: -15%;
+    }
   }
 
   &:hover:before {
@@ -48,6 +51,7 @@ $text-color: #363636;
 @mixin nav-en-link() {
   display: block;
   position: relative;
+  z-index: 2;
   font-size: 19px;
   line-height: 45px;
   color: #9E9E9E;
@@ -73,8 +77,11 @@ $text-color: #363636;
     height: 4px;
     position: absolute;
     display: inline-block;
-    left: -13%;
+    left: -35%;
     top: 44%;
+    @include to($max_width: 480px) {
+      left: -15%;
+    }
   }
   &:hover:before {
     background: #363636;
@@ -86,6 +93,8 @@ $text-color: #363636;
 @mixin nav-active() {
   position: relative;
   font-weight: bold;
+  pointer-events: none;
+
   &:before{
     position: absolute;
     background-color: #363636;
@@ -95,20 +104,10 @@ $text-color: #363636;
     height: 8px;
     display: inline-block;
     top: 40%;
-    left: -13%;
-    @include to($max_width: 1920px) {
-      left: -14%;
+    left: -37%;
 
-    }
-    @include to($max_width: 1280px) {
-      left: -13.5%;
-
-    }
-    @include to($max_width: 1024px) {
-      left: -14%;
-
-    }
     @include to($max_width: 480px) {
+      left: -16%;
       width: 6px;
       height: 6px;
     }
@@ -121,6 +120,30 @@ $text-color: #363636;
 
   color: $text-color;
   font-weight: 300;
+  &:hover {
+    color: #9E9E9E;
+    transition: all 0.1s ease;
+  }
+  &:hover:before {
+    background-color: #9E9E9E;
+    transition: all 0.3s ease;
+
+  }
+
+  &:before {
+    position: absolute;
+    top: 40%;
+    left: -37%;
+    background-color: #363636;
+    content: "";
+    border-radius: 80%;
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    @include to($max_width: 480px) {
+      left: -16%;
+    }
+  }
   @media screen and (max-width: 1280px) {
     font-size: 21px;
   }

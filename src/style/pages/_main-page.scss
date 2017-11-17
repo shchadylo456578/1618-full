@@ -16,9 +16,10 @@
         @include size-xxs(7.5);
 
         .text {
-          @include size(5);
+          @include size(6);
           @include size-xxlg(7);
           @include size-xlg(8);
+          @include size-lg(9);
           @include size-xs(11.5);
 
           h1 {
@@ -61,19 +62,49 @@
   }
 
   #slider-container {
-    @include shift-left(0.9);
+    @include shift-left(0.8);
     margin-bottom: 15%;
 
 
     .owl-carousel {
-      .owl-stage-outer {
+      a {
+        cursor: pointer;
+      }
+      .owl-stage {
         position: relative;
+        height: 750px;
+        padding-top: 30px;
+        padding-left: 1.2%;
+
+        @include to($max_width:1440px){
+          height: 580px;
+        }
+        @include to($max_width:768px){
+          height: 390px;
+        }
+        @include to($max_width:480px){
+          height: 550px;
+        }
+
       }
       .owl-item {
         .item {
-          height: auto;
+          height: 732px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+
           width:100%;
           display: block;
+          @include to($max_width:1440px){
+            height: 534px;
+          }
+          @include to($max_width:768px){
+            height: 340px;
+          }
+          @include to($max_width:480px){
+            height: 494px;
+          }
         }
       }
 
@@ -82,13 +113,6 @@
         animation-duration: 2000ms;
         -webkit-animation-fill-mode: both;
         animation-fill-mode: both;
-      }
-      .item {
-        .img {
-          display: block;
-          width: 100%;
-          height: auto;
-        }
       }
 
       .owl-animated-out {
@@ -110,7 +134,7 @@
 
       .bringOut {
         opacity: 1;
-        left: 0;
+        //left: 0;
       }
       .bringIn {
         opacity: 1;
@@ -133,26 +157,26 @@
         }
         20% {
           opacity: 1;
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
           transform: scale(1.1) translateX(101%);
         }
         60% {
           opacity: 1;
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
           transform: scale(1.01) translateX(2%);
         }
-        90% {
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          transform: scale(1) translateX(1%)
+        80% {
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          transform: scale(1.01) translateX(0.5%)
         }
         100% {
           opacity: 1;
           -moz-box-shadow: none;
           box-shadow: none;
-          transform: scale(1) translateX(10px);
+          transform: scale(1) translateX(0);
         }
       }
 
@@ -162,56 +186,58 @@
           opacity: 1;
           -moz-box-shadow: none;
           box-shadow: none;
-          transform: scale(1) translateX(10px);
+          transform: scale(1) translateX(0);
         }
-        10% {
+        20% {
           opacity: 1;
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          transform: scale(1.01) translateX(1%)
         }
-        40% {
+        60% {
           opacity: 1;
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          transform: scale(1.01) translateX(8px);
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          transform: scale(1.01) translateX(2%);
         }
         80% {
-
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          transform: scale(1.1) translateX(calc(110% + 25px));
-        }
-        90% {
-          -moz-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.75);
-          transform: scale(1) translateX(calc(100% + 25px))
+          opacity: 1;
+          -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+          transform: scale(1.1) translateX(101%);
         }
         100% {
           opacity: 1;
           -moz-box-shadow: none;
           box-shadow: none;
-          transform: scale(1) translateX(calc(100% + 25px));
+          transform: scale(1) translateX(calc(100% + 30px));
         }
       }
 
 
       .owl-nav {
+        padding-left: 1.2%;
 
         @include row-flex;
         justify-content: space-between;
         text-align: inherit;
-        margin-top: 0;
 
         .owl-next, .owl-prev {
           @include col();
           @include size(3.2);
           @include size-md(3);
-          @include size-xs(5);
+          @include size-sm(4);
+          @include size-xs(5.5);
+          @include size-xxs(6);
           position: relative;
           background: none;
           #left, #right {
             @include slider-botton-text;
             padding-left: 30px;
+
+            @include to($max_width: 480px) {
+              padding-left: 15px;
+            }
 
 
             &:hover {
@@ -226,7 +252,7 @@
               height: 4px;
               display: inline-block;
               position: absolute;
-              left: 3%;
+              left: 0;
               top: 22%;
             }
             &:hover:before {
@@ -238,17 +264,8 @@
       }
 
 
-      //owl-photo-item
-      .owl-item {
-        transform: translateX(10px);
 
-      }
-      .owl-stage-outer {
-
-        padding-bottom: 3%;
-      }
-
-      .image-slide img {
+      .image-slide {
         width: 100%;
         vertical-align: top;
       }
@@ -268,7 +285,8 @@
       .image-slide:before {
         @include photo-on-text;
         @include size(5);
-        @include size-xs(6.5);
+        @include size-xs(8);
+        @include size-xxs(10);
         position: absolute;
         content: attr(data-content);
         color: #fff;
@@ -277,53 +295,17 @@
         padding: 0 0 7% 10%;
         box-sizing: border-box;
         opacity: 1;
+        @include to($max_width: 480px) {
+          padding: 0 0 10% 15%;
+        }
+        @include to($max_width: 320px) {
+          padding: 0 0 10% 18%;
+        }
       }
       .image-slide:hover:after, .image-slide:hover:before {
         opacity: 1;
       }
     }
-    // .owl-controls {
-    //   padding-left: 8.33%;
-    //   @include col;
-    //   .owl-nav {
-    //     @include row-flex();
-    //     justify-content: space-between;
-    //     .owlPrevBtn, .owlNextBtn{
-    //       @include col();
-    //       @include size(2.6);
-    //       @include size-md(3);
-    //       @include size-xs(5);
-    //       position: relative;
-    //     }
-
-    //     // .owl-prev, .owl-next {
-    //     //   @include slider-botton-text;
-    //     //   padding-left: 15%;
-    //     //   cursor: pointer;
-    //     //   &:hover{
-    //     //     color: #9E9E9E;
-    //     //     transition: all 0.3s ease;
-    //     //   }
-    //     // }
-
-    //     // .owl-prev:before, .owl-next:before {
-    //     //   background-color: #363636;
-    //     //   content: "";
-    //     //   border-radius: 50%;
-    //     //   width: 4px;
-    //     //   height: 4px;
-    //     //   display: inline-block;
-    //     //   position: absolute;
-    //     //   left: 0;
-    //     //   top: 15%;
-    //     // }
-
-    //     // .owl-next:hover:before , .owl-prev:hover:before {
-    //     //   background-color: #9E9E9E;
-    //     //   transition: all 0.3s ease;
-    //     // }
-    //   }
-    // }
   }
 
   .main-article-collections {

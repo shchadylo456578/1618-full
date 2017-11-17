@@ -1,21 +1,14 @@
-
 $(document).ready(function(){
-
-
-  var owl = $('.owl-carousel'),
-      prev = $("#left"),
-      next = $("#right");
-
+  var owl = $(".owl-carousel");
   owl.owlCarousel({
-        items : 4,
+        items: 1,
         stagePadding: '60',
-        touchDrag  : false,
-        mouseDrag  : false,
+        touchDrag: false,
+        mouseDrag: false,
         smartSpeed: 20,
         animateOut: 'bringOut',
         animateIn: 'bringIn',
         dots: false,
-        loop: true,
         lazyLoad: true,
         margin: 30,
         nav:true,
@@ -25,6 +18,7 @@ $(document).ready(function(){
                 items:1,
                 stagePadding: '25',
                 margin: 10
+
             },
             768:{
                 items:1,

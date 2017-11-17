@@ -5,7 +5,6 @@ article {
     margin-bottom: 5%;
     .row {
       @include row-flex;
-      justify-content: space-between;
 
       .entry-meta {
         margin-bottom: 7%;
@@ -24,15 +23,19 @@ article {
       }
 
       .navbar {
-        @include col;
-        @include size(2.5);
-        @include size-xs(3.5);
-        @include size-xxs(4.2);
         opacity: 1;
-        transition: all 1s ease-out;
+        transition: all 0.3s ease-out;
         position: fixed;
-        right: 0;
-        z-index: 2;
+        right: 18%;
+        z-index: 1;
+
+        @include to($max_width: 1440px) {
+          right: 11%;
+        }
+        @include to($max_width: 480px) {
+          right: 5%;
+        }
+
 
         &.fade-out {
           opacity: 0;
@@ -47,42 +50,58 @@ article {
         .en-link {
           @include nav-en-link();
         }
-        #navbartitle {
-          margin-bottom: 60%;
-
-        }
         #navbar {
-          display: none;
-          padding-bottom: 60%;
+          opacity: 0;
+          pointer-events:none;
+          transition: all 0.3s ease-in;
+        }
+
+      }
+      .nav-back {
+        position: fixed;
+        bottom: 50px;
+        z-index: 2;
+
+        right: 17.8%;
+        @include to($max_width: 1440px) {
+          right: 11%;
+        }
+        @include to($max_width: 1280px) {
+          right: 12.5%;
+        }
+        @include to($max_width: 1024px) {
+          right: 13%;
+        }
+        @include to($max_width: 768px) {
+          right: 13.7%;
+        }
+        @include to($max_width: 480px) {
+          right: 8.7%;
         }
         #back {
-          @include nav-next-prev;
-          .back {
-            position: relative;
-            display: block;
+          ul {
+            li {
+              @include nav-next-prev;
+              transition: all 0.3s ease-in;
+              cursor: pointer;
+              opacity: 0;
 
-            &:before {
-              position: absolute;
-              left: -13%;
-              top: 44%;
-              background-color: #363636;
-              content: "";
-              border-radius: 80%;
-              width: 4px;
-              height: 4px;
-              display: inline-block;
-              @include to($max_width: 480px) {
-                top: 36%;
-              }
             }
           }
         }
       }
     }
+
+
     //main-photo
     .size-large {
+      //@include col;
       @include size(11);
       @include size-xs(12);
+
+      //@include shift-padding-right(1);
+      //@include shift-xs-padding-right(0);
+      //width: 100%;
 
     }
   }
@@ -92,8 +111,6 @@ article {
     @include size(7.4);
     @include size-xs(12);
     padding-bottom: 10%;
-
-
 
     .entry-content-text {
       @include size-xs(8);
@@ -198,17 +215,11 @@ article {
           }
         }
 
-
       }
     }
 
-
-
-
-
     .gallery {
       padding: 10% 0;
-
 
       figure {
         @include row-flex();
@@ -233,7 +244,6 @@ article {
           @include size(5.9);
           @include size-xs(12);
 
-
         }
       }
     }
@@ -248,13 +258,13 @@ article {
         .item {
           @include col();
           @include size(4);
-          @include size-xs(12);
+          @include size-sm(12);
           button {
             display: flex;
             justify-content: center;
             align-items: center;
             @include button();
-            @include to($max_width: 480px) {
+            @include to($max_width: 768px) {
               margin-bottom: 20px;
             }
             svg {
@@ -354,6 +364,7 @@ article {
 
   }
 }
-.container-background{
+
+.container-background {
   @include background-block();
 }

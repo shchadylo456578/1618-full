@@ -30,8 +30,11 @@
     width: 4px;
     height: 4px;
     display: inline-block;
-    left: -15%;
+    left: -35%;
     top: 44%;
+    @include to($max_width: 480px) {
+      left: -15%;
+    }
   }
   &:hover:before {
     background-color: #9e9e9e;
@@ -66,8 +69,11 @@
     width: 4px;
     height: 4px;
     display: inline-block;
-    left: -15%;
+    left: -35%;
     top: 44%;
+    @include to($max_width: 480px) {
+      left: -15%;
+    }
   }
 
   &:hover:before {

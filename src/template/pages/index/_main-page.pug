@@ -9,6 +9,28 @@
       .row
         .header-text
           .text
+            script(type='text/javascript').
+              (function () {
+                'use strict';
+                //window['headervars'] = '<?php echo get_headervars(); ?>';
+                window['headervars'] = {
+                  line1:[
+                    ' зростаєте',
+                    ' відпочиваєте',
+                    ' спите',
+                    ' радієте',
+                    ' мрієте'],
+
+                  line2:[
+                    ' втілюємо',
+                    ' працюємо',
+                    ' ремонтуємо',
+                    ' будуємо',
+                    ' проектуємо'
+                  ]
+                }
+              })();
+
             h1 Ви
               span#changeWords_1  мрієте
               br
@@ -33,25 +55,18 @@
 
     //TODO: SLIDER
     #slider-container
-      .carusel
-        .owl-carousel.owl-theme
-          .item.image-slide(data-content="Квартира з алюмінієвим плінтусом")
-            img(src="images/blog-page/blog-photo-1.jpg")
-
-          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            img(src="images/main-page/photo-slider-3.jpg")
-
-
-          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-           img(src="images/main-page/photo-slider-3.jpg")
+      .owl-carousel.owl-theme
+        a(href="#")
+          .item.image-slide(style="background-image: url('images/main-page/photo-slider-1.jpg');", data-content="Як закинутий цех перетворити на офіс")
+        a(href="#")
+          .item.image-slide(style="background-image: url('images/main-page/photo-slider-2.jpg');", data-content="Як закинутий цех перетворити на офіс")
+        a(href="#")
+          .item.image-slide(style="background-image: url('images/main-page/photo-slider-1.jpg');", data-content="Як закинутий цех перетворити на офіс")
+        a(href="#")
+          .item.image-slide(style="background-image: url('images/main-page/photo-slider-2.jpg');", data-content="Як закинутий цех перетворити на офіс")
 
 
-          .item.image-slide(data-content="Як закинутий цех перетворити на офіс")
-            img(src="images/blog-page/blog-photo-1.jpg")
-
-
-      //TODO: ARTICLE
-
+    //TODO: ARTICLE
     .main-article-collections
       h1.article-title Ось як ми працюємо
       .main-article

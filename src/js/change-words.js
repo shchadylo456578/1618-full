@@ -1,36 +1,20 @@
-var wordsfirsr = [
-  ' зростаєте',
-  ' відпочиваєте',
-  ' спите',
-  ' радієте',
-  ' мрієте'
-];
-
 $(function () {
   count = 0;
   setInterval(function () {
     count++;
-    $("#changeWords_1").fadeOut(500, function () {
-      $(this).html(wordsfirsr[count % wordsfirsr.length]).fadeIn(500);
+    $("#changeWords_1").fadeOut(1000, function () {
+      $(this).html(window.headervars.line1[count % window.headervars.line1.length]).fadeIn(1000);
     });
   }, 3000);
 });
 
 
-var wordssecond = [
-  ' втілюємо',
-  ' працюємо',
-  ' ремонтуємо',
-  ' будуємо',
-  ' проектуємо'
-];
-
 $(function () {
   count = 0;
   setInterval(function () {
     count++;
-    $("#changeWords_2").fadeOut(500, function () {
-      $(this).html(wordssecond[count % wordssecond.length]).fadeIn(500);
+    $("#changeWords_2").fadeOut(1000, function () {
+      $(this).html(window.headervars.line2[count % window.headervars.line2.length]).fadeIn(1000);
     });
   }, 3000);
 });

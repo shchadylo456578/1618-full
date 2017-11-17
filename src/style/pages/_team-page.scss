@@ -142,46 +142,42 @@
         @include col();
         @include size(5.5);
         @include size-xs(12);
-        @include border-bottom-text;
+        .item {
+          @include border-bottom-text;
+          margin-bottom: 8vh;
+          @include to($max-width: 768px) {
+            margin-bottom: 6vh;
+          }
+          @include to($max-width: 480px) {
+            margin-bottom: 5vh;
+          }
+          h2 {
+            position: relative;
+            @include title-h2;
 
-        margin-bottom: 8vh;
-        @include to($max-width: 768px) {
-          margin-bottom: 6vh;
-        }
-        @include to($max-width: 480px) {
-          margin-bottom: 5vh;
-        }
-
-        display: flex;
-        flex-direction: column;
-
-        h2 {
-          position: relative;
-          @include title-h2;
-
-          padding-bottom: 5%;
-        }
-        h2:before {
-          @include pseudo-dot-h2;
-        }
-        p {
-          @include p-text;
-          margin-top: auto;
-          padding-bottom: 3%;
+            padding-bottom: 5%;
+          }
+          h2:before {
+            @include pseudo-dot-h2;
+          }
+          p {
+            @include p-text;
+            padding-bottom: 3%;
+          }
         }
       }
-      //TODO: Button
-      .team-button {
-        @include col();
-        @include size(5.5);
-        @include size-xs(12);
-        //padding-top: 10%;
+    }
+    //TODO: Button
+    .team-button {
+      //@include col();
+      @include size(5.5);
+      @include size-xs(12);
+      //padding-top: 10%;
 
-        .button {
-          @include button();
-          display: inline-block;
-          text-align: center;
-        }
+      .button {
+        @include button();
+        display: inline-block;
+        text-align: center;
       }
     }
   }

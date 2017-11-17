@@ -75,53 +75,61 @@ $(document).ready(function(){
      */
 
     $('#navbartitle').click(function(e){
-      $('#navbar').show(500);
-      $('#navbartitle').hide(500);
 
+      // BEGIN munu fde-in to main word and + navbar animate opacity show
+      var menuword = [('<a href="index.html">Головна</a>')];
+
+      $("#navbartitle").fadeIn(function () {
+        $(this).html(menuword[count % menuword.length]);
+      });
+
+      $('#navbar').css({opacity: 1}) .css('pointer-events', 'auto');
+      // AND munu fde-in to main word and + navbar animate opacity show
+
+
+      // BEGIN dots-show onclick
       var dotsOpacity = $('#dotsAnimate').css("opacity");
-
-      console.log(dotsOpacity);
-
       if(dotsOpacity < 1) {
         $('#dotsAnimate').css({opacity: 1})
       }
+      });
+    // AND dots-show onclick
 
 
-  });
+    //BEGIN sckrollTOP button animate
+    var scrollTop = $(".scrollTop");
 
-  /**
-   *
-   *
-   *
-   * chenge color menu* */
-  $('.navigation').click(function () {
-    if ($(this).hasClass('changeColorText')) {
-      $(this).removeClass('changeColorText');
-    } else {
-      $('.navigation').removeClass('changeColorText');
-      $(this).addClass('changeColorText');
+    $(window).scroll(function () {
+      var topPos = $(this).scrollTop();
 
-    }
-  });
+      if (topPos > 800) {
+        $(scrollTop).css("opacity", "1");
+      } else {
+        $(scrollTop).css("opacity", "0");
+      }
+    });
+
+    $(scrollTop).click(function () {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+    //AND sckrollTOP button animate
 
 
 
 
-  window.addEventListener("resize", function(){
 
-      init();
-
-  });
-
+  window.addEventListener("resize", function(){init();});
   init();
-
 
   function init(){
     menu_bottom_line_show = $('.footer').position().top - $(window).height();
     navbartitle.duration(menu_bottom_line_show);
 
     // console.log('dur!!',navbartitle.duration());
-    
+
     $('.footer .logo-animate').height($('.footer .footer-logo-down').position().top + $('.footer .logo-animate').width());
 
     var dot = [];
