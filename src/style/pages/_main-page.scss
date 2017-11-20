@@ -342,21 +342,21 @@
       padding-bottom: 10%;
 
       .columns {
-        @include row-float;
-        display: block;
+        //@include row-float;
+        //display: block;
 
         .column:nth-child(odd) {
-          float: left;
+          //float: left;
         }
         .column:nth-child(even) {
-          float: right;
+          //float: right;
           @include to($max_width: 480px) {
-            float: left;
+            //float: left;
           }
         }
         .column:last-child {
-          float: none;
-          clear: both;
+          //float: none;
+          //clear: both;
         }
         //.column:nth-child(1) {
         //    order: 1;
