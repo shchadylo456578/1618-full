@@ -335,29 +335,35 @@
     }
 
     .main-article {
+
       @include col;
       @include size(7.8);
       @include size-xs(6.8);
-      min-height: 100vh;
       padding-bottom: 10%;
 
+      .column-gutter {
+        width: 14%;
+      }
+
       .columns {
-        //@include row-float;
+        @include row-float;
+
+        //justify-content: space-between;
         //display: block;
 
-        .column:nth-child(odd) {
+        //.column:nth-child(odd) {
           //float: left;
-        }
-        .column:nth-child(even) {
+        //}
+        //.column:nth-child(even) {
           //float: right;
-          @include to($max_width: 480px) {
+          //@include to($max_width: 480px) {
             //float: left;
-          }
-        }
-        .column:last-child {
-          //float: none;
-          //clear: both;
-        }
+          //}
+        //}
+        //.column:last-child {
+        //  float: none;
+        //  clear: both;
+        //}
         //.column:nth-child(1) {
         //    order: 1;
         //}

@@ -1,6 +1,8 @@
-// $(document).ready(function(){
-//   $('.grid').masonry({
-//       itemSelector: '.grid-item',
-//       columnWidth: 50
-//   })
-// });
+$(document).ready(function(){
+  $('.columns').masonry({
+      itemSelector: '.column',
+      columnWidth: '.column',
+      gutter: '.column-gutter',
+      percentPosition: true
+  });
+});
