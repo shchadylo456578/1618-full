@@ -1,172 +1,153 @@
 .portfolio {
-  .portfolio-collections {
+  .header {
     @include shift-left(0.9);
+
     .row {
       @include row-flex;
-      justify-content: space-between;
 
-      .portfolio-main {
+      .portfolio-heder-text {
         @include col;
-        @include size(7.9);
-        @include size-xs(6.8);
+        @include size(6);
+        @include size-lg(7);
+        @include size-xs(7.3);
 
-        //TEXT
+        h1 {
+          @include header-text;
 
-        .portfolio-heder-text {
-          @include size(7);
-          @include size-lg(8);
-          @include size-md(9);
-          @include size-sm(10);
-          @include size-xs(12);
-
-          h1 {
-            @include header-text;
-
-          }
-          p {
-            @include p-text;
-
-          }
         }
+        p {
+          @include p-text;
 
-        //PHOTO
-        .portfolio-items {
-          padding-bottom: 10%;
-          position: relative;
-
-          a {
-            display: block;
-            margin-top: 5%;
-
-            .item {
-              position: relative;
-              cursor: pointer;
-
-            }
-
-            .item img {
-              width: 100%;
-              vertical-align: top;
-            }
-            .item:after {
-              position: absolute;
-              opacity: 0;
-              transition: all 0.3s;
-              -webkit-transition: all 0.3s;
-              content: '';
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              background: rgba(0, 0, 0, 0.4);
-            }
-
-            .item:before {
-              @include photo-on-text;
-              @include size(7);
-              @include size-xs(8);
-              @include size-xxs(10);
-              position: absolute;
-
-              content: attr(data-content);
-              color: #fff;
-              z-index: 1;
-              bottom: 0;
-              padding: 0 0 7% 10%;
-              box-sizing: border-box;
-              -moz-box-sizing: border-box;
-              opacity: 1;
-            }
-            .item:hover:after, .image-slide:hover:before {
-              opacity: 1;
-
-            }
-          }
         }
       }
-
-      //TODO: NAVBAR
-
-      .navbar {
-        @include col;
-        @include size(2.5);
-        @include size-xs(3.5);
-        @include size-xxs(4.2);
-        opacity: 1;
-        transition: all 1s ease-out;
+      .navigation-menu {
         position: fixed;
-        right: 0;
 
-        &.fade-out {
-          opacity: 0;
-        }
-        .navigation {
-          @include navbar();
-        }
-        .nav-active {
-          @include nav-active()
+        right: 18%;
+        z-index: 1;
 
+        @include to($max_width: 1440px) {
+          right: 12%;
         }
-        .en-link {
-          @include nav-en-link();
+        @include to($max_width: 1280px) {
+          right: 11%;
         }
-        #navbartitle {
-          margin-bottom: 60vh;
+        @include to($max_width: 768px) {
+          right: 11%;
+        }
+        @include to($max_width: 480px) {
+          right: 4%;
+        }
+        .navbar {
+          opacity: 1;
+          transition: all 0.3s ease-out;
 
-        }
-        #navbar {
-          padding-bottom: 30vh;
-          display: none;
-        }
-
-        #pagination {
-          @include nav-next-prev;
-
-          .counter {
-            display: block;
-            font-weight: bold;
+          &.fade-out {
+            opacity: 0;
+          }
+          .navigation {
+            @include navbar();
+          }
+          .nav-active {
+            @include nav-active()
 
           }
+          .en-link {
+            @include nav-en-link();
+          }
+          #navbar {
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease-in;
+          }
+        }
 
-          .next-page, .prev-page {
-            position: relative;
-            padding-top: 10%;
-            display: block;
-            font-weight: 300;
-            &:before {
-              position: absolute;
-              left: -13%;
-              top: 45%;
-              background-color: #363636;
-              content: "";
-              border-radius: 80%;
-              width: 4px;
-              height: 4px;
-              display: inline-block;
-              @include to($max_width:480px) {
-                left: -15%;
-                top: 36%;
+        .nav-next-prev {
+          position: fixed;
+          bottom: 50px;
+          z-index: 1;
+          ul {
+
+            li {
+              margin-bottom: 25px;
+
+              .next, .prev {
+                @include nav-next-prev;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+
+              }
+              .counter {
+                @include counter();
               }
             }
           }
         }
       }
+
     }
   }
-}
 
-@media screen and (max-width: 320px) {
-  .portfolio {
-    .portfolio-collections {
-      .portfolio-main {
-        .portfolio-items {
-          .item {
-            h3 {
-              font-size: 14px;
+  //PHOTO
+  .portfolio-items {
+    @include shift-left(0.9);
 
-            }
-          }
-        }
+    @include size(7.4);
+    @include size-xxlg(6.9);
+    @include size-lg(7);
+    @include size-sm(7.2);
+    @include size-xs(7.4);
+    @include size-xxs(6.8);
+
+    padding-bottom: 10%;
+    position: relative;
+
+    a {
+      display: block;
+      margin-top: 5%;
+
+      .item {
+        position: relative;
+        cursor: pointer;
+
+      }
+
+      .item img {
+        width: 100%;
+        vertical-align: top;
+      }
+      .item:after {
+        position: absolute;
+        opacity: 0;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .item:before {
+        @include photo-on-text;
+        @include size(7);
+        @include size-xs(9);
+        @include size-xxs(11);
+        position: absolute;
+
+        content: attr(data-content);
+        color: #fff;
+        z-index: 1;
+        bottom: 0;
+        padding: 0 0 7% 10%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        opacity: 1;
+      }
+      .item:hover:after, .image-slide:hover:before {
+        opacity: 1;
+
       }
     }
   }

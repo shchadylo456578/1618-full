@@ -13,28 +13,29 @@
       .logo-part-2 {
         display:none;
         position: absolute;
-        width: 41px;
-        left: 37px;
+        width: 42px;
+        left: 67px;
+
         @include to($max_width: 1920px) {
           left: 37px;
           width: 40px;
         }
 
         @include to($max_width: 1440px) {
-          left: 37px;
+          left: 19px;
           width: 40px;
         }
         @include to($max_width: 1280px) {
-          left: 36px;
-          width: 41px;
+          width: 30px;
+          left: 17px;
         }
         @include to($max_width: 768px) {
           width: 30px;
           left: 17px;
         }
         @include to($max_width: 480px) {
-          width: 16px;
-          left: 9.5px;
+          width: 17px;
+          left: 9px;
         }
 
       }
@@ -43,8 +44,8 @@
         background: #fff;
         // top: 33px;
         top: 0!important;
-        left: 55px;
-        width: 21px;
+        left: 86px;
+        width: 23px;
         height: 245px;
 
         @include to($max_width: 1920px) {
@@ -55,23 +56,23 @@
 
         @include to($max_width: 1440px) {
           top: 33px;
-          left: 56px;
+          left: 38px;
           width: 21px;
         }
         @include to($max_width: 1280px) {
           top: 33px;
-          left: 56px;
-          width: 21px;
+          left: 35px;
+          width: 22px;
         }
         @include to($max_width: 768px) {
           top: 25px;
           left: 31px;
-          width: 16px;
+          width: 16px
         }
         @include to($max_width: 480px) {
           top: 10px;
-          left: 17px;
-          width: 9px;
+          left: 16px;
+          width: 10px;
         }
 
       }
@@ -146,7 +147,7 @@
            right: 11.6%;
          }
          @include to($max_width: 480px) {
-           right: 5%;
+           right: 4%;
          }
          #navbar {
 
@@ -164,10 +165,10 @@
   //TODO: Footer logo down
   .footer-logo-down {
     position: relative;
-    @include shift-padding-left(0);
+    @include shift-padding-left(0.2);
     @include shift-xxlg-padding-left(0.1);
-    @include shift-xlg-padding-left(0.2);
-    @include shift-lg-padding-left(0.3);
+    @include shift-xlg-padding-left(0.1);
+    @include shift-lg-padding-left(0.1);
     @include shift-sm-padding-left(0.2);
     @include shift-xs-padding-left(0);
 
@@ -178,8 +179,15 @@
       @include size-xlg(7.8);
       @include size-xxs(8);
 
-      height: 21px;
-      background-color: white;
+      height: 23px;
+      background-color: #fff;
+      @include to($max_width: 1920px) {
+        height: 21px;
+      }
+      @include to($max_width: 1280px) {
+        height: 22px;
+      }
+
     }
     .logoline-618:before {
       background: url(../images/svg/618.svg) no-repeat;
@@ -273,11 +281,11 @@
       }
       .footer-logo-down {
         .logoline-618 {
-          height: 9px;
+          height: 10px;
         }
         .logoline-618:before {
-          background-size: 22px 25px;
-          height: 9px;
+          background-size: 22px 26px;
+          height: 10px;
 
         }
 

@@ -3,7 +3,7 @@
   @include wrapper-full();
   @include reset();
   @include shift-left(2);
-  @include shift-lg-left(1);
+  @include shift-xlg-left(1);
   @include shift-md-left(0.5);
   @include shift-xs-left(-0.2);
   height: auto;
@@ -12,8 +12,8 @@
     .logo-pos {
       .logo-part-1 {
         position: absolute;
-        width: 41px;
-        left: 37px;
+        width: 42px;
+        left: 67px;
 
 
       }
@@ -21,8 +21,8 @@
         position: absolute;
         background: #363636;
         top: 33px;
-        left: 55px;
-        width: 22px;
+        left: 86px;
+        width: 23px;
         height: 245px;
 
       }
@@ -68,12 +68,12 @@
       .logo-pos {
         .logo-part-1 {
           position: absolute;
-          left: 37px;
+          left: 19px;
           width: 40px;
         }
         .logo-animate {
           top: 33px;
-          left: 56px;
+          left: 38px;
           width: 21px;
 
         }
@@ -87,13 +87,13 @@
       .logo-pos {
         .logo-part-1 {
           position: absolute;
-          left: 36px;
-          width: 41px;
+          left: 15px;
+          width: 42px;
         }
         .logo-animate {
           top: 33px;
-          left: 56px;
-          width: 21px;
+          left: 35px;
+          width: 22px;
 
         }
       }
@@ -130,14 +130,14 @@
     .logo-an {
       .logo-pos {
         .logo-part-1 {
-          width: 16px;
-          left: 9.5px;;
+          width: 17px;
+          left: 9px;;
 
         }
         .logo-animate {
           top: 10px;
           left: 16px;
-          width: 9px;
+          width: 10px;
 
         }
         .logo-animate:before {
@@ -151,28 +151,3 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .wrapper {
-    .logo-an {
-      .logo-pos {
-        .logo-part-1 {
-          width: 16px;
-          left: 9.5px;
-
-        }
-        .logo-animate {
-          top: 10px;
-          left: 17px;
-          width: 9px;
-
-        }
-        .logo-animate:before {
-          background-size: 9px 23px;
-          top: 102%;
-          height: 40px;
-
-        }
-      }
-    }
-  }
-}

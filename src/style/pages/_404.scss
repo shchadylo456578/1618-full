@@ -111,8 +111,16 @@
     }
   }
   .navbar {
-    @include size(3);
-    @include size-xs(3);
+    position: fixed;
+    right: 18%;
+    z-index: 1;
+
+    @include to($max_width: 1440px) {
+      right: 12%;
+    }
+    @include to($max_width: 480px) {
+      right: 4%;
+    }
     #navbar {
       @include navbar();
     }

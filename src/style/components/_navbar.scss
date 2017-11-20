@@ -22,6 +22,9 @@ $text-color: #363636;
   &:hover {
     color: #9E9E9E;
     transition: all 0.3s ease;
+    @include to($max_width: 1024px) {
+      color: $text-color;
+    }
   }
 
   &:before {
@@ -41,6 +44,9 @@ $text-color: #363636;
   &:hover:before {
     background-color: #9E9E9E;
     transition: all 0.3s ease;
+    @include to($max_width: 1024px) {
+      background-color: $text-color;
+    }
 
 
   }
@@ -86,6 +92,7 @@ $text-color: #363636;
   &:hover:before {
     background: #363636;
     transition: all 0.3s ease;
+
   }
 }
 
@@ -114,7 +121,73 @@ $text-color: #363636;
   }
 }
 
+@mixin counter(){
+  color: $text-color;
+  font-size: 21px;
+  font-weight: bold;
+  @include to($max_width: 480px) {
+    font-size: 16px;
+  }
+}
+
+@mixin nav-back() {
+  position: relative;
+  font-size: 25px;
+  line-height: 26px;
+
+  color: $text-color;
+  font-weight: 300;
+  &:hover {
+    color: #9E9E9E;
+    transition: all 0.1s ease;
+    @include to($max_width: 1024px) {
+      color: $text-color;
+    }
+  }
+  &:hover:before {
+    background-color: #9E9E9E;
+    transition: all 0.3s ease;
+    @include to($max_width: 1024px) {
+      background-color: $text-color;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: 40%;
+    left: -38%;
+    background-color: #363636;
+    content: "";
+    border-radius: 80%;
+    width: 4px;
+    height: 4px;
+    display: inline-block;
+    @include to($max_width: 1920px) {
+      left: -35%;
+    }
+    @include to($max_width: 1280px) {
+      left: -45%;
+    }
+    @include to($max_width: 1024px) {
+      left: -44%;
+    }
+    @include to($max_width: 480px) {
+      left: -17%;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 21px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    line-height: 20px;
+
+  }
+}
+
+
 @mixin nav-next-prev () {
+  position: relative;
   font-size: 25px;
   line-height: 26px;
 
@@ -132,16 +205,32 @@ $text-color: #363636;
 
   &:before {
     position: absolute;
-    top: 40%;
-    left: -37%;
+    top: 21%;
+    left: -45%;
     background-color: #363636;
     content: "";
     border-radius: 80%;
     width: 4px;
     height: 4px;
     display: inline-block;
+    @include to($max_width: 1440px) {
+      left: -46%;
+    }
+
+    @include to($max_width: 1280px) {
+      left: -58%;
+    }
+    @include to($max_width: 1024px) {
+      left: -50%;
+    }
+    @include to($max_width: 768px) {
+      left: -65%;
+    }
     @include to($max_width: 480px) {
-      left: -16%;
+      left: -20%;
+    }
+    @include to($max_width: 380px) {
+      left: -22%;
     }
   }
   @media screen and (max-width: 1280px) {

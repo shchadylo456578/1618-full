@@ -83,3 +83,29 @@
 }
 
 
+
+
+@mixin nav-footer-active(){
+  position: relative;
+  font-weight: bold;
+  pointer-events: none;
+
+  &:before{
+    position: absolute;
+    background-color: #fff;
+    content: "";
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    top: 40%;
+    left: -37%;
+
+    @include to($max_width: 480px) {
+      left: -16%;
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+

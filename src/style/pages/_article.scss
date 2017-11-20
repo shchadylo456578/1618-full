@@ -21,75 +21,62 @@ article {
           @include p-text;
         }
       }
-
-      .navbar {
-        opacity: 1;
-        transition: all 0.3s ease-out;
+      .navigation-menu {
         position: fixed;
         right: 18%;
         z-index: 1;
 
         @include to($max_width: 1440px) {
-          right: 11%;
+          right: 12%;
         }
         @include to($max_width: 480px) {
-          right: 5%;
+          right: 4%;
         }
+        .navbar {
+          opacity: 1;
+          transition: all 0.3s ease-out;
 
 
-        &.fade-out {
-          opacity: 0;
-        }
-        .navigation {
-          @include navbar();
-        }
-        .nav-active {
-          @include nav-active()
+
+          &.fade-out {
+            opacity: 0;
+          }
+          .navigation {
+            @include navbar();
+          }
+          .nav-active {
+            @include nav-active()
+
+          }
+          .en-link {
+            @include nav-en-link();
+          }
+          #navbar {
+            opacity: 0;
+            pointer-events:none;
+            transition: all 0.3s ease-in;
+          }
 
         }
-        .en-link {
-          @include nav-en-link();
-        }
-        #navbar {
-          opacity: 0;
-          pointer-events:none;
-          transition: all 0.3s ease-in;
-        }
+        .nav-back {
+          position: fixed;
+          bottom: 50px;
+          z-index: 2;
 
-      }
-      .nav-back {
-        position: fixed;
-        bottom: 50px;
-        z-index: 2;
+          #back {
+            ul {
+              li {
+                @include nav-back;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+                opacity: 0;
 
-        right: 17.8%;
-        @include to($max_width: 1440px) {
-          right: 11%;
-        }
-        @include to($max_width: 1280px) {
-          right: 12.5%;
-        }
-        @include to($max_width: 1024px) {
-          right: 13%;
-        }
-        @include to($max_width: 768px) {
-          right: 13.7%;
-        }
-        @include to($max_width: 480px) {
-          right: 8.7%;
-        }
-        #back {
-          ul {
-            li {
-              @include nav-next-prev;
-              transition: all 0.3s ease-in;
-              cursor: pointer;
-              opacity: 0;
-
+              }
             }
           }
         }
       }
+
     }
 
 

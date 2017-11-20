@@ -6,9 +6,9 @@
       @include row-flex;
       justify-content: space-between;
       .blog-main {
-        @include col;
-        @include size(7.9);
-        @include size-xs(6.8);
+        @include size(8);
+        @include size-xs(7.3);
+
         .portfolio-heder-text {
           @include size(8);
           @include size-lg(9);
@@ -54,10 +54,11 @@
           .item:before {
             @include photo-on-text;
             @include size(6.5);
+            @include size-xxlg(9);
+            @include size-lg(10);
             @include size-xs(11);
             @include size-xxs(12);
             position: absolute;
-
             content: attr(data-content);
             color: #fff;
             z-index: 1;
@@ -103,63 +104,66 @@
         }
       }
 
-      .navbar {
-        @include col;
-        @include size(2.5);
-        @include size-xs(3.5);
-        @include size-xxs(4.2);
-        opacity: 1;
-        transition: all 1s ease-out;
+      .navigation-menu {
         position: fixed;
-        right: 0;
+        right: 18%;
+        z-index: 1;
 
-        &.fade-out {
-          opacity: 0;
+        @include to($max_width: 1440px) {
+          right: 12.1%;
         }
-        .navigation {
-          @include navbar();
+        @include to($max_width: 1280px) {
+          right: 11%;
         }
-        .nav-active {
-          @include nav-active()
+        @include to($max_width: 480px) {
+          right: 4%;
+        }
 
-        }
-        .en-link {
-          @include nav-en-link();
-        }
-        #navbartitle {
-          margin-bottom: 60%;
 
-        }
-        #navbar {
-          padding-bottom: 60%;
-          display: none;
-        }
-        #pagination {
-          @include nav-next-prev;
+        .navbar {
+          opacity: 1;
+          transition: all 0.3s ease-out;
 
-          .counter {
-            display: block;
-            font-weight: bold;
+
+
+          &.fade-out {
+            opacity: 0;
+          }
+          .navigation {
+            @include navbar();
+          }
+          .nav-active {
+            @include nav-active()
 
           }
+          .en-link {
+            @include nav-en-link();
+          }
+          #navbar {
+            opacity: 0;
+            pointer-events:none;
+            transition: all 0.3s ease-in;
+          }
 
-          .next-page, .prev-page {
-            position: relative;
-            margin: 10% 0 10% 0;
-            display: block;
-            &:before {
-              position: absolute;
-              left: -13%;
-              top: 20%;
-              background-color: #363636;
-              content: "";
-              border-radius: 80%;
-              width: 4px;
-              height: 4px;
-              display: inline-block;
-              @include to($max_width:480px) {
-                left: -15%;
-                top: 36%;
+        }
+        .nav-next-prev {
+          position: fixed;
+          bottom: 50px;
+          z-index: 1;
+
+          ul {
+
+            li {
+              margin-bottom: 25px;
+
+              .next, .prev {
+                @include nav-next-prev;
+                transition: all 0.3s ease-in;
+                cursor: pointer;
+
+              }
+              .counter {
+                @include counter();
               }
             }
           }

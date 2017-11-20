@@ -21,15 +21,19 @@
       }
 
       .navbar {
-        @include col;
-        @include size(2.5);
-        @include size-xs(3.5);
-        @include size-xxs(4.2);
         opacity: 1;
-        transition: all 1s ease-out;
+        transition: all 0.3s ease-out;
         position: fixed;
-        right: 0;
-        z-index: 100;
+        right: 18%;
+        z-index: 1;
+
+        @include to($max_width: 1440px) {
+          right: 12%;
+        }
+        @include to($max_width: 480px) {
+          right: 5%;
+        }
+
 
         &.fade-out {
           opacity: 0;
@@ -45,15 +49,19 @@
           @include nav-en-link();
         }
         #navbar {
-          display: none;
+          opacity: 0;
+          pointer-events:none;
+          transition: all 0.3s ease-in;
         }
+
       }
     }
   }
 
   .team-photo {
     @include shift-left(0.9);
-    @include size(10.2);
+    @include size(10);
+    @include size-xs(11);
     margin-bottom: 8vh;
     @include to($max-width: 768px) {
       margin-bottom: 8vh;
@@ -169,10 +177,8 @@
     }
     //TODO: Button
     .team-button {
-      //@include col();
       @include size(5.5);
       @include size-xs(12);
-      //padding-top: 10%;
 
       .button {
         @include button();

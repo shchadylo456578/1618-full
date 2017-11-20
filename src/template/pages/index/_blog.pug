@@ -51,22 +51,27 @@
               .item
                 a(href="#") Як вибрати пластикові вікна?
 
+        .navigation-menu
+          .navbar
+            #navbartitle.navigation.title Меню
+            #navbar
+              ul
+                li
+                  a.navigation(href="index-team.html") Команда
+                li
+                  a.navigation(href="index-portfolio.html") Портфоліо
+                li
+                  a.navigation.nav-active(href="index-blog.html") Блог
+                li
+                  a.en-link(href="#") English version
 
-        .navbar
-          #navbartitle.navigation.title Меню
-          #navbar
-            a.navigation(href="index.html") Головна
 
-            a.navigation(href="index-team.html") Команда
 
-            a.navigation(href="index-portfolio.html") Портфоліо
-
-            a.navigation.nav-active(href="index-blog.html") Блог
-
-            a.en-link(href="#") English version
-
-          #pagination
-            span.counter 1/8
-            a.next-page(href="index-blog-2.html") Наступна
-              br
-              |сторінка
+          .nav-next-prev
+            ul
+              li
+                a.counter 1/8
+              li
+                a.next(href="index-blog-2.html") Наступна
+                  br
+                  | сторінка
