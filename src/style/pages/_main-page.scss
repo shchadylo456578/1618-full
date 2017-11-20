@@ -96,13 +96,16 @@
       }
       .owl-item {
         .item {
-          height: 732px;
+          height: 1000px;
           background-size: cover;
           background-repeat: no-repeat;
-          background-position: center;
+          background-position: center center;
 
           width:100%;
           display: block;
+          @include to($max_width:1920px){
+            height: 732px;
+          }
           @include to($max_width:1440px){
             height: 534px;
           }
